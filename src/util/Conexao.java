@@ -16,9 +16,8 @@ public class Conexao {
 
     private static Connection conectar() {
         try {
-            
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost/dbbancario", "postgres", "123456");
+            return DriverManager.getConnection("jdbc:postgresql://localhost/dbCoffai", "postgres", "123456");
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
