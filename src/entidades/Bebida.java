@@ -1,5 +1,9 @@
 package entidades;
 
+/**
+ *
+ * @author Hygor
+ */
 public class Bebida {
 	private String nome;
 	private float preco;
