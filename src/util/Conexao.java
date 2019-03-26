@@ -16,6 +16,7 @@ public class Conexao {
 
     private static Connection conectar() {
         try {
+            
             Class.forName("org.postgresql.Driver");
             return DriverManager.getConnection("jdbc:postgresql://localhost/dbbancario", "postgres", "123456");
 
