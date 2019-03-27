@@ -92,7 +92,7 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
             Produto produto = new NProduto().consultar(
                     Integer.parseInt(id));
             
-            FrmCadProduto janela = new FrmCadProduto(
+            FrmCadCafe janela = new FrmCadCafe(
                     pnlPrincipal, produto);
             pnlPrincipal.add(janela);
             janela.setVisible(true);

@@ -137,7 +137,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         try {
 
-            FrmCadProduto frm = new FrmCadProduto(this.pnlPrincipal);
+            FrmCadCafe frm = new FrmCadCafe(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
 
