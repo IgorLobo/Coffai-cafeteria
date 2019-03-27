@@ -4,23 +4,22 @@ package entidades;
  *
  * @author Hygor
  */
-public class GostoAcido {
+public class GostoAmargo {
 
     private int id;
-    private String intensidade;
     private double quantidade;
+    private String gostoAmargo;
 
-    public GostoAcido() {
+    public GostoAmargo() {
         this.id = 0;
-        this.intensidade = "";
         this.quantidade = 0;
-
+        this.gostoAmargo = "";
     }
 
-    public GostoAcido(int id, String intensidade, double quantidade) {
+    public GostoAmargo(int id, double quantidade, String gostoAmargo) {
         this.id = id;
-        this.intensidade = intensidade;
         this.quantidade = quantidade;
+        this.gostoAmargo = gostoAmargo;
     }
 
     public int getId() {
@@ -31,14 +30,6 @@ public class GostoAcido {
         this.id = id;
     }
 
-    public String getIntensidade() {
-        return intensidade;
-    }
-
-    public void setIntensidade(String intensidade) {
-        this.intensidade = intensidade;
-    }
-
     public double getQuantidade() {
         return quantidade;
     }
@@ -46,4 +37,13 @@ public class GostoAcido {
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
+
+    public String getGostoAmargo() {
+        return gostoAmargo;
+    }
+
+    public void setGostoAmargo(String gostoAmargo) {
+        this.gostoAmargo = gostoAmargo;
+    }
+
 }
