@@ -1,7 +1,11 @@
 package entidades;
-
 import java.util.Date;
 
+
+/**
+ *
+ * @author Hygor
+ */
 public class Cliente {
 	private String nome;
 	private Date dataNascimento;

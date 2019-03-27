@@ -4,6 +4,6 @@ package entidades;
  *
  * @author Hygor
  */
-public class Cardapio {
-
+public class Caracteristico {
+    
 }
