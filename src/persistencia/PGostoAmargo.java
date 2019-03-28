@@ -1,6 +1,6 @@
 package persistencia;
 
-import entidades.Amendoa;
+import entidades.GostoAmargo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,15 +13,15 @@ import java.util.List;
  *
  * @author Hygor
  */
-public class PAmendoa {
+public class PGostoAmargo {
 
     Connection cnn;
 
-    public PAmendoa() {
+    public PGostoAmargo() {
         cnn = util.Conexao.getConexao();
     }
 
-    public void incluir(Amendoa parametro) throws SQLException {
+    public void incluir(GostoAmargo parametro) throws SQLException {
         String sql = "INSERT INTO cliente(nome, endereco)"
                 + " VALUES(?,?);";
 
@@ -31,7 +31,7 @@ public class PAmendoa {
         cnn.close();
     }
 
-    public void alterar(Amendoa parametro) throws SQLException {
+    public void alterar(GostoAmargo parametro) throws SQLException {
         String sql = "UPDATE cliente"
                 + " SET"
                 + " nome = ?,"
@@ -56,7 +56,7 @@ public class PAmendoa {
         cnn.close();
     }
 
-    public Amendoa consultar(int id) throws SQLException {
+    public GostoAmargo consultar(int id) throws SQLException {
         String sql = "SELECT * FROM cliente"
                 + " WHERE id = ?";
 
@@ -74,14 +74,14 @@ public class PAmendoa {
         return null;
     }
 
-    public List<Amendoa> listar() throws SQLException {
+    public List<GostoAmargo> listar() throws SQLException {
         String sql = "SELECT * FROM cliente";
 
         Statement stm = cnn.createStatement();
 
         ResultSet rs = stm.executeQuery(sql);
 
-        List<Amendoa> lista = new ArrayList<>();
+        List<GostoAmargo> lista = new ArrayList<>();
 
         while (rs.next()) {
         }
