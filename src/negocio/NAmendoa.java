@@ -18,7 +18,7 @@ public class NAmendoa {
 
     public void salvar(Amendoa parametro) throws Exception {
 
-        if (parametro.getIntensidade() < 1) {
+        if (parametro.getIntensidade()< 1) {
             throw new Exception("É necessário preencher a intensidade");
         }
         

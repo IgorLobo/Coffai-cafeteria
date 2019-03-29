@@ -7,14 +7,14 @@ package entidades;
 public class Amendoa {
 
     private int id;
-    private String intensidade;
+    private Double intensidade;
 
     public Amendoa() {
         this.id = 0;
-        this.intensidade = "";
+        this.intensidade = 0.0;
     }
 
-    public Amendoa(int id, String intensidade) {
+    public Amendoa(int id, Double intensidade) {
         this.id = id;
         this.intensidade = intensidade;
     }
@@ -27,11 +27,11 @@ public class Amendoa {
         this.id = id;
     }
 
-    public String getIntensidade() {
+    public Double getIntensidade() {
         return intensidade;
     }
 
-    public void setIntensidade(String intensidade) {
+    public void setIntensidade(Double intensidade) {
         this.intensidade = intensidade;
     }
 }
