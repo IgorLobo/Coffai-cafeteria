@@ -27,7 +27,6 @@ public class PTurbidez {
 
         PreparedStatement prd = cnn.prepareStatement(sql);
 
-
         prd.execute();
         cnn.close();
     }
@@ -40,7 +39,6 @@ public class PTurbidez {
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
-
 
         prd.execute();
         cnn.close();

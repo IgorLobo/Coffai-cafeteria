@@ -45,6 +45,5 @@ public class GraoVerde {
     public void setAmostra(String amostra) {
         this.amostra = amostra;
     }
-    
-    
+
 }

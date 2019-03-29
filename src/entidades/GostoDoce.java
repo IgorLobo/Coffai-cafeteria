@@ -45,5 +45,5 @@ public class GostoDoce {
 
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
-    }    
+    }
 }

@@ -5,6 +5,7 @@ package entidades;
  * @author Hygor
  */
 public class Fermentado {
+
     private int id;
     private String intensidade;
     private double quantidade;

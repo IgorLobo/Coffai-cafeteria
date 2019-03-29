@@ -14,6 +14,7 @@ import java.util.List;
  * @author Hygor
  */
 public class PCliente {
+
     Connection cnn;
 
     public PCliente() {

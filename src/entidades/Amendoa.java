@@ -5,6 +5,7 @@ package entidades;
  * @author Hygor
  */
 public class Amendoa {
+
     private int id;
     private String intensidade;
 
