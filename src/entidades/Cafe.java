@@ -6,6 +6,7 @@ package entidades;
  */
 public class Cafe {
 
+    private int id;
     private String popularidade;
 
     //APARENCIA
@@ -30,6 +31,7 @@ public class Cafe {
     private GostoAcido gostoAcido;
 
     public Cafe() {
+        this.id = 0;
         this.popularidade = "";
         this.cor = null;
         this.oleosidade = null;
@@ -48,7 +50,8 @@ public class Cafe {
         this.gostoAcido = null;
     }
 
-    public Cafe(String popularidade, Cor cor, Oleosidade oleosidade, Turbidez turbidez, GraoVerde graoVerde, GostoDoce aromaDoce, Caramelizado caramelizado, Amendoa amendoa, Fermentado aromaFermentado, Queimado aromaQueimado, Fermentado saborFermentado, Adstringente adstringente, Queimado saborQueimado, GostoAmargo gostoAmargo, GostoDoce saborDoce, GostoAcido gostoAcido) {
+    public Cafe(int id, String popularidade, Cor cor, Oleosidade oleosidade, Turbidez turbidez, GraoVerde graoVerde, GostoDoce aromaDoce, Caramelizado caramelizado, Amendoa amendoa, Fermentado aromaFermentado, Queimado aromaQueimado, Fermentado saborFermentado, Adstringente adstringente, Queimado saborQueimado, GostoAmargo gostoAmargo, GostoDoce saborDoce, GostoAcido gostoAcido) {
+        this.id = id;
         this.popularidade = popularidade;
         this.cor = cor;
         this.oleosidade = oleosidade;
@@ -65,6 +68,14 @@ public class Cafe {
         this.gostoAmargo = gostoAmargo;
         this.saborDoce = saborDoce;
         this.gostoAcido = gostoAcido;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPopularidade() {

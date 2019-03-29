@@ -8,20 +8,31 @@ import java.util.List;
  */
 public class Venda {
 
+    private int id;
     private List<Bebida> listaBebida;
     private List<Cafe> listaCafe;
     private List<Lanche> listaLanche;
 
     public Venda() {
+        this.id = 0;
         this.listaBebida = null;
         this.listaCafe = null;
         this.listaLanche = null;
     }
 
-    public Venda(List<Bebida> listaBebida, List<Cafe> listaCafe, List<Lanche> listaLanche) {
+    public Venda(int id, List<Bebida> listaBebida, List<Cafe> listaCafe, List<Lanche> listaLanche) {
+        this.id = id;
         this.listaBebida = listaBebida;
         this.listaCafe = listaCafe;
         this.listaLanche = listaLanche;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Bebida> getListaBebida() {

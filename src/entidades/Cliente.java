@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class Cliente {
 
+    private int id;
     private String nome;
     private Date dataNascimento;
     private String logradouro;
@@ -20,10 +21,21 @@ public class Cliente {
     private String telefone;
 
     public Cliente() {
+        this.id = 0;
+        this.nome = "";
+        this.dataNascimento = null;
+        this.logradouro = "";
+        this.quadra = "";
+        this.lote = "";
+        this.numero = "";
+        this.cep = "";
+        this.bairro = "";
+        this.cidade = "";
+        this.telefone = "";
     }
 
-    public Cliente(String nome, Date dataNascimento, String logradouro, String quadra, String lote, String numero,
-            String cep, String bairro, String cidade, String telefone) {
+    public Cliente(int id, String nome, Date dataNascimento, String logradouro, String quadra, String lote, String numero, String cep, String bairro, String cidade, String telefone) {
+        this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.logradouro = logradouro;
@@ -34,6 +46,14 @@ public class Cliente {
         this.bairro = bairro;
         this.cidade = cidade;
         this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
