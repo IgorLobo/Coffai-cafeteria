@@ -5,6 +5,8 @@
  */
 package apresentacao;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -120,7 +122,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             FrmCadCliente frm = new FrmCadCliente(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
-
+            frm.setPosicao();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
@@ -140,7 +142,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             FrmCadCafe frm = new FrmCadCafe(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
-
+            frm.setPosicao();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }

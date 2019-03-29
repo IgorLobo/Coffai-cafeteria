@@ -27,7 +27,6 @@ public class PAdstringente {
 
         PreparedStatement prd = cnn.prepareStatement(sql);
 
-
         prd.execute();
         cnn.close();
     }

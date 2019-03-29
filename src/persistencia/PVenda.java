@@ -21,7 +21,7 @@ public class PVenda {
         cnn = util.Conexao.getConexao();
     }
 
-        public void incluir(Venda parametro) throws SQLException {
+    public void incluir(Venda parametro) throws SQLException {
         String sql = "INSERT INTO cliente(nome, endereco)"
                 + " VALUES(?,?);";
 

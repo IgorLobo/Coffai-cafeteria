@@ -5,42 +5,56 @@ package entidades;
  * @author Hygor
  */
 public class Bebida {
-	private String nome;
-	private float preco;
-	private int quantidade;
-	
-	public Bebida () {}
-	
-	public Bebida(String nome, float preco, int quantidade) {
-		super();
-		this.nome = nome;
-		this.preco = preco;
-		this.quantidade = quantidade;
-	}
 
-	public String getNome() {
-		return nome;
-	}
+    private int Id;
+    private String nome;
+    private float preco;
+    private int quantidade;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Bebida() {
+        this.Id = 0;
+        this.nome = "";
+        this.preco = 0;
+        this.quantidade = 0;
+    }
 
-	public float getPreco() {
-		return preco;
-	}
+    public Bebida(int Id, String nome, float preco, int quantidade) {
+        this.Id = Id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
 
-	public void setPreco(float preco) {
-		this.preco = preco;
-	}
+    public int getId() {
+        return Id;
+    }
 
-	public int getQuantidade() {
-		return quantidade;
-	}
+    public void setId(int Id) {
+        this.Id = Id;
+    }
 
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-	
-	
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
 }
