@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package negocio;
 
 import entidades.Adstringente;
+import java.util.List;
 import persistencia.PAdstringente;
 
 /**
@@ -23,7 +19,7 @@ public class NAdstringente {
     public void salvar(Adstringente parametro) throws Exception {
 
         if (parametro.getQuantidade() < 1) {
-            throw new Exception("É necessário preencher o endereço");
+            throw new Exception("É necessário preencher a quantidade");
         }
         
         if(parametro.getId() == 0){
@@ -31,19 +27,17 @@ public class NAdstringente {
         }else{
             per.alterar(parametro);
         }
-            
-
     }
     
     public void excluir(int id) throws Exception{
         per.excluir(id);
     }
     
-    public Cliente consultar(int id) throws Exception{
+    public Adstringente consultar(int id) throws Exception{
         return per.consultar(id);
     }
     
-    public List<Cliente> listar() throws Exception{
+    public List<Adstringente> listar() throws Exception{
         return per.listar();
     }
 }
