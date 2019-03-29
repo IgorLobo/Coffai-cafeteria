@@ -7,22 +7,22 @@ package entidades;
 public class Lanche {
 
     private int id;
-    private String Nome;
+    private String nome;
     private float preco;
     private int quantidade;
     private String descricao;
 
     public Lanche() {
         this.id = 0;
-        this.Nome = "";
+        this.nome = "";
         this.preco = 0;
         this.quantidade = 0;
         this.descricao = "";
     }
 
-    public Lanche(int id, String Nome, float preco, int quantidade, String descricao) {
+    public Lanche(int id, String nome, float preco, int quantidade, String descricao) {
         this.id = id;
-        this.Nome = Nome;
+        this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.descricao = descricao;
@@ -37,11 +37,11 @@ public class Lanche {
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public void setNome(String Nome) {
-        this.Nome = Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public float getPreco() {
