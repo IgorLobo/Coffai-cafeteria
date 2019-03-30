@@ -1,6 +1,6 @@
 package entidades;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -10,6 +10,8 @@ public class Cliente {
 
     private int id;
     private String nome;
+    private String cpf;
+    private String email;
     private Date dataNascimento;
     private String logradouro;
     private String quadra;
@@ -23,6 +25,8 @@ public class Cliente {
     public Cliente() {
         this.id = 0;
         this.nome = "";
+        this.cpf = "";
+        this.email = "";
         this.dataNascimento = null;
         this.logradouro = "";
         this.quadra = "";
@@ -34,9 +38,11 @@ public class Cliente {
         this.telefone = "";
     }
 
-    public Cliente(int id, String nome, Date dataNascimento, String logradouro, String quadra, String lote, String numero, String cep, String bairro, String cidade, String telefone) {
+    public Cliente(int id, String nome, String cpf, String email, Date dataNascimento, String logradouro, String quadra, String lote, String numero, String cep, String bairro, String cidade, String telefone) {
         this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
         this.dataNascimento = dataNascimento;
         this.logradouro = logradouro;
         this.quadra = quadra;
@@ -56,12 +62,20 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Date getDataNascimento() {
@@ -70,6 +84,14 @@ public class Cliente {
 
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getLogradouro() {
