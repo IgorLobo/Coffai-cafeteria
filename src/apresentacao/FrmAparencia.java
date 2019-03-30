@@ -54,6 +54,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         jbExcluir_Oleosidade = new javax.swing.JToggleButton();
         jbIncluir_Turbidez = new javax.swing.JToggleButton();
         jbExcluir_Turbidez = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -81,80 +82,99 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Turbidez:");
 
-        jbIncluir_Cor.setText("Incluir");
+        jbIncluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        jbIncluir_Cor.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Cor.setMinimumSize(new java.awt.Dimension(20, 20));
 
-        jbExcluir_Cor.setText("Excluir");
+        jbExcluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Cor.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Cor.setMinimumSize(new java.awt.Dimension(20, 20));
 
-        jbIncluir_Oleosidade.setText("Incluir");
+        jbIncluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        jbIncluir_Oleosidade.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Oleosidade.setMinimumSize(new java.awt.Dimension(20, 20));
 
-        jbExcluir_Oleosidade.setText("Excluir");
+        jbExcluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Oleosidade.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Oleosidade.setMinimumSize(new java.awt.Dimension(20, 20));
 
-        jbIncluir_Turbidez.setText("Incluir");
+        jbIncluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        jbIncluir_Turbidez.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Turbidez.setMinimumSize(new java.awt.Dimension(20, 20));
 
-        jbExcluir_Turbidez.setText("Excluir");
+        jbExcluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Turbidez.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Turbidez.setMinimumSize(new java.awt.Dimension(20, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/Aparencia.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel_Aparencia2Layout = new javax.swing.GroupLayout(jPanel_Aparencia2);
         jPanel_Aparencia2.setLayout(jPanel_Aparencia2Layout);
         jPanel_Aparencia2Layout.setHorizontalGroup(
             jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                        .addComponent(cbTurbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Turbidez)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbExcluir_Turbidez))
-                    .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                        .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cbCor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbOleosidade, 0, 84, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                                .addComponent(jbIncluir_Cor)
+                                .addComponent(cbTurbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbExcluir_Cor))
+                                .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                                .addComponent(jbIncluir_Oleosidade)
+                                .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cbCor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbOleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbExcluir_Oleosidade)))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                                .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
+                                        .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
+                                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addComponent(jLabel1))
+                .addGap(50, 50, 50))
         );
 
         jPanel_Aparencia2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel9});
 
         jPanel_Aparencia2Layout.setVerticalGroup(
             jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Aparencia2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(cbCor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbIncluir_Cor)
-                    .addComponent(jbExcluir_Cor))
+                    .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(cbOleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbIncluir_Oleosidade)
-                        .addComponent(jbExcluir_Oleosidade)))
+                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbIncluir_Turbidez)
-                        .addComponent(jbExcluir_Turbidez))
+                        .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
                         .addComponent(cbTurbidez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel_Aparencia2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel9});
@@ -163,17 +183,11 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jPanel_Aparencia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+            .addComponent(jPanel_Aparencia2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel_Aparencia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel_Aparencia2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -185,6 +199,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox cbOleosidade;
     private javax.swing.JComboBox cbTurbidez;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel9;
