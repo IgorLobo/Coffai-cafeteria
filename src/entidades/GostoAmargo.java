@@ -8,18 +8,18 @@ public class GostoAmargo {
 
     private int id;
     private double quantidade;
-    private String gostoAmargo;
+    private String intensidade;
 
     public GostoAmargo() {
         this.id = 0;
         this.quantidade = 0;
-        this.gostoAmargo = "";
+        this.intensidade = "";
     }
 
-    public GostoAmargo(int id, double quantidade, String gostoAmargo) {
+    public GostoAmargo(int id, double quantidade, String intensidade) {
         this.id = id;
         this.quantidade = quantidade;
-        this.gostoAmargo = gostoAmargo;
+        this.intensidade = intensidade;
     }
 
     public int getId() {
@@ -38,12 +38,12 @@ public class GostoAmargo {
         this.quantidade = quantidade;
     }
 
-    public String getGostoAmargo() {
-        return gostoAmargo;
+    public String getIntensidade() {
+        return intensidade;
     }
 
-    public void setGostoAmargo(String gostoAmargo) {
-        this.gostoAmargo = gostoAmargo;
+    public void setIntensidade(String intensidade) {
+        this.intensidade = intensidade;
     }
 
 }

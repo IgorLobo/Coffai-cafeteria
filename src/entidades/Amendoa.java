@@ -14,7 +14,7 @@ public class Amendoa {
         this.intensidade = 0.0;
     }
 
-    public Amendoa(int id, Double intensidade) {
+    public Amendoa(int id, double intensidade) {
         this.id = id;
         this.intensidade = intensidade;
     }
@@ -27,11 +27,11 @@ public class Amendoa {
         this.id = id;
     }
 
-    public Double getIntensidade() {
+    public double getIntensidade() {
         return intensidade;
     }
 
-    public void setIntensidade(Double intensidade) {
+    public void setIntensidade(double intensidade) {
         this.intensidade = intensidade;
     }
 }
