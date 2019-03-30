@@ -21,12 +21,7 @@ public class NAmendoa {
         if (parametro.getIntensidade()< 1) {
             throw new Exception("É necessário preencher a intensidade");
         }
-        
-        if(parametro.getId() == 0){
-            per.incluir(parametro);
-        }else{
-            per.alterar(parametro);
-        }
+        per.incluir(parametro);
     }
     
     public void excluir(int id) throws Exception{

@@ -22,11 +22,7 @@ public class NAdstringente {
             throw new Exception("É necessário preencher a quantidade");
         }
         
-        if(parametro.getId() == 0){
-            per.incluir(parametro);
-        }else{
-            per.alterar(parametro);
-        }
+        per.incluir(parametro);
     }
     
     public void excluir(int id) throws Exception{

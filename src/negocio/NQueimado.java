@@ -19,11 +19,7 @@ public class NQueimado {
           throw new Exception("É necessário preencher a quantidade");
       }
 
-      if (parametro.getId()==0) {
-          per.incluir(parametro);
-      }else{
-          per.alterar(parametro);
-      }
+      per.incluir(parametro);
 
   }
 
