@@ -22,30 +22,32 @@ public class POleosidade {
     }
 
     public void incluir(Oleosidade parametro) throws SQLException {
-        String sql = "INSERT INTO cliente(nome, endereco)"
-                + " VALUES(?,?);";
+        String sql = "INSERT INTO Oleosidade(Quantidade) "
+                + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
 
         prd.execute();
         cnn.close();
     }
 
     public void alterar(Oleosidade parametro) throws SQLException {
-        String sql = "UPDATE cliente"
+        String sql = "UPDATE Oleosidade"
                 + " SET"
-                + " nome = ?,"
-                + " endereco = ?"
+                + " Quantidade = ?,"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
+        prd.setInt(2, parametro.getId());
 
         prd.execute();
         cnn.close();
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM cliente"
+        String sql = "DELETE FROM Oleosidade"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -57,25 +59,28 @@ public class POleosidade {
     }
 
     public Oleosidade consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente"
+        String sql = "SELECT * FROM Oleosidade"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
         stm.setInt(1, id);
 
         ResultSet rs = stm.executeQuery();
-
+        
+        Oleosidade oleosidade  = new Oleosidade();
         if (rs.next()) {
+            oleosidade.setId(rs.getInt("Id"));
+            oleosidade.setQuantidade(rs.getDouble("Quantidade"));
         }
 
         rs.close();
         cnn.close();
 
-        return null;
+        return oleosidade;
     }
 
     public List<Oleosidade> listar() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM Oleosidade";
 
         Statement stm = cnn.createStatement();
 
@@ -84,10 +89,14 @@ public class POleosidade {
         List<Oleosidade> lista = new ArrayList<>();
 
         while (rs.next()) {
+            Oleosidade oleosidade = new Oleosidade();
+            oleosidade.setId(rs.getInt("Id"));
+            oleosidade.setQuantidade(rs.getDouble("Quantidade"));
+            lista.add(oleosidade);
         }
         rs.close();
         cnn.close();
 
-        return null;
+        return lista;
     }
 }

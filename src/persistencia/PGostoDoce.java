@@ -22,30 +22,35 @@ public class PGostoDoce {
     }
 
     public void incluir(GostoDoce parametro) throws SQLException {
-        String sql = "INSERT INTO cliente(nome, endereco)"
-                + " VALUES(?,?);";
+        String sql = "INSERT INTO GostoDoce(Quantidade, Intensidade) "
+                + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
+        prd.setString(2, parametro.getIntensidade());
 
         prd.execute();
         cnn.close();
     }
 
     public void alterar(GostoDoce parametro) throws SQLException {
-        String sql = "UPDATE cliente"
+        String sql = "UPDATE GostoDoce"
                 + " SET"
-                + " nome = ?,"
-                + " endereco = ?"
+                + " Quantidade = ?,"
+                + " Intensidade = ?,"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
+        prd.setString(2, parametro.getIntensidade());
+        prd.setInt(3, parametro.getId());
 
         prd.execute();
         cnn.close();
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM cliente"
+        String sql = "DELETE FROM GostoDoce"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -57,7 +62,7 @@ public class PGostoDoce {
     }
 
     public GostoDoce consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente"
+        String sql = "SELECT * FROM GostoDoce"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -65,17 +70,21 @@ public class PGostoDoce {
 
         ResultSet rs = stm.executeQuery();
 
+        GostoDoce gostoDoce = new GostoDoce();
         if (rs.next()) {
+            gostoDoce.setId(rs.getInt("Id"));
+            gostoDoce.setQuantidade(rs.getDouble("Quantidade"));
+            gostoDoce.setIntensidade(rs.getString("Intensidade"));
         }
 
         rs.close();
         cnn.close();
 
-        return null;
+        return gostoDoce;
     }
 
     public List<GostoDoce> listar() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM GostoDoce";
 
         Statement stm = cnn.createStatement();
 
@@ -84,10 +93,15 @@ public class PGostoDoce {
         List<GostoDoce> lista = new ArrayList<>();
 
         while (rs.next()) {
+            GostoDoce gostoDoce = new GostoDoce();
+            gostoDoce.setId(rs.getInt("Id"));
+            gostoDoce.setQuantidade(rs.getDouble("Quantidade"));
+            gostoDoce.setIntensidade(rs.getString("Intensidade"));
+            lista.add(gostoDoce);
         }
         rs.close();
         cnn.close();
 
-        return null;
+        return lista;
     }
 }

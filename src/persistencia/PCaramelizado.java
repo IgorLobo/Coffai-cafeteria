@@ -22,30 +22,32 @@ public class PCaramelizado {
     }
 
     public void incluir(Caramelizado parametro) throws SQLException {
-        String sql = "INSERT INTO cliente(nome, endereco)"
-                + " VALUES(?,?);";
+        String sql = "INSERT INTO Caramelizado(Intensidade) "
+                + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getIntensidade());
 
         prd.execute();
         cnn.close();
     }
 
     public void alterar(Caramelizado parametro) throws SQLException {
-        String sql = "UPDATE cliente"
+        String sql = "UPDATE Caramelizado"
                 + " SET"
-                + " nome = ?,"
-                + " endereco = ?"
+                + " Intensidade = ?,"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getIntensidade());
+        prd.setInt(2, parametro.getId());
 
         prd.execute();
         cnn.close();
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM cliente"
+        String sql = "DELETE FROM Caramelizado"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -57,7 +59,7 @@ public class PCaramelizado {
     }
 
     public Caramelizado consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente"
+        String sql = "SELECT * FROM Caramelizado"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -65,17 +67,20 @@ public class PCaramelizado {
 
         ResultSet rs = stm.executeQuery();
 
+        Caramelizado caramelizado = new Caramelizado();
         if (rs.next()) {
+            caramelizado.setId(rs.getInt("Id"));
+            caramelizado.setIntensidade(rs.getDouble("Intensidade"));
         }
 
         rs.close();
         cnn.close();
 
-        return null;
+        return caramelizado;
     }
 
     public List<Caramelizado> listar() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM Caramelizado";
 
         Statement stm = cnn.createStatement();
 
@@ -84,10 +89,14 @@ public class PCaramelizado {
         List<Caramelizado> lista = new ArrayList<>();
 
         while (rs.next()) {
+            Caramelizado caramelizado = new Caramelizado();
+            caramelizado.setId(rs.getInt("Id"));
+            caramelizado.setIntensidade(rs.getDouble("Intensidade"));
+            lista.add(caramelizado);
         }
         rs.close();
         cnn.close();
 
-        return null;
+        return lista;
     }
 }

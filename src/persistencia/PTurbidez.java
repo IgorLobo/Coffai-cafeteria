@@ -22,30 +22,32 @@ public class PTurbidez {
     }
 
     public void incluir(Turbidez parametro) throws SQLException {
-        String sql = "INSERT INTO cliente(nome, endereco)"
-                + " VALUES(?,?);";
+        String sql = "INSERT INTO Turbidez(Quantidade) "
+                + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
 
         prd.execute();
         cnn.close();
     }
 
     public void alterar(Turbidez parametro) throws SQLException {
-        String sql = "UPDATE cliente"
+        String sql = "UPDATE Turbidez"
                 + " SET"
-                + " nome = ?,"
-                + " endereco = ?"
+                + " Quantidade = ?,"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
+        prd.setInt(2, parametro.getId());
 
         prd.execute();
         cnn.close();
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM cliente"
+        String sql = "DELETE FROM Turbidez"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -57,25 +59,28 @@ public class PTurbidez {
     }
 
     public Turbidez consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente"
+        String sql = "SELECT * FROM Turbidez"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
         stm.setInt(1, id);
 
         ResultSet rs = stm.executeQuery();
-
+        
+        Turbidez turbidez  = new Turbidez();
         if (rs.next()) {
+            turbidez.setId(rs.getInt("Id"));
+            turbidez.setQuantidade(rs.getDouble("Quantidade"));
         }
 
         rs.close();
         cnn.close();
 
-        return null;
+        return turbidez;
     }
 
     public List<Turbidez> listar() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM Turbidez";
 
         Statement stm = cnn.createStatement();
 
@@ -84,10 +89,14 @@ public class PTurbidez {
         List<Turbidez> lista = new ArrayList<>();
 
         while (rs.next()) {
+            Turbidez trubidez = new Turbidez();
+            trubidez.setId(rs.getInt("Id"));
+            trubidez.setQuantidade(rs.getDouble("Quantidade"));
+            lista.add(trubidez);
         }
         rs.close();
         cnn.close();
 
-        return null;
+        return lista;
     }
 }

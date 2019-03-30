@@ -22,30 +22,32 @@ public class PAdstringente {
     }
 
     public void incluir(Adstringente parametro) throws SQLException {
-        String sql = "INSERT INTO cliente(nome, endereco)"
-                + " VALUES(?,?);";
+        String sql = "INSERT INTO Adstringente(Quantidade) "
+                + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
 
         prd.execute();
         cnn.close();
     }
 
     public void alterar(Adstringente parametro) throws SQLException {
-        String sql = "UPDATE cliente"
+        String sql = "UPDATE Adstringente"
                 + " SET"
-                + " nome = ?,"
-                + " endereco = ?"
+                + " Quantidade = ?,"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
+        prd.setDouble(1, parametro.getQuantidade());
+        prd.setInt(2, parametro.getId());
 
         prd.execute();
         cnn.close();
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM cliente"
+        String sql = "DELETE FROM Adstringente"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -57,25 +59,28 @@ public class PAdstringente {
     }
 
     public Adstringente consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM cliente"
+        String sql = "SELECT * FROM Adstringente"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
         stm.setInt(1, id);
 
         ResultSet rs = stm.executeQuery();
-
+        
+        Adstringente adstringente  = new Adstringente();
         if (rs.next()) {
+            adstringente.setId(rs.getInt("Id"));
+            adstringente.setQuantidade(rs.getDouble("Quantidade"));
         }
 
         rs.close();
         cnn.close();
 
-        return null;
+        return adstringente;
     }
 
     public List<Adstringente> listar() throws SQLException {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM Adstringente";
 
         Statement stm = cnn.createStatement();
 
@@ -84,10 +89,14 @@ public class PAdstringente {
         List<Adstringente> lista = new ArrayList<>();
 
         while (rs.next()) {
+            Adstringente adstringente = new Adstringente();
+            adstringente.setId(rs.getInt("Id"));
+            adstringente.setQuantidade(rs.getDouble("Quantidade"));
+            lista.add(adstringente);
         }
         rs.close();
         cnn.close();
 
-        return null;
+        return lista;
     }
 }
