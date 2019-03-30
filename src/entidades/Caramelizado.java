@@ -7,14 +7,14 @@ package entidades;
 public class Caramelizado {
 
     private int id;
-    private String intensidade;
+    private double intensidade;
 
     public Caramelizado() {
         this.id = 0;
-        this.intensidade = "";
+        this.intensidade = 0;
     }
 
-    public Caramelizado(int id, String intensidade) {
+    public Caramelizado(int id, double intensidade) {
         this.id = id;
         this.intensidade = intensidade;
     }
@@ -27,11 +27,11 @@ public class Caramelizado {
         this.id = id;
     }
 
-    public String getIntensidade() {
+    public double getIntensidade() {
         return intensidade;
     }
 
-    public void setIntensidade(String intensidade) {
+    public void setIntensidade(double intensidade) {
         this.intensidade = intensidade;
     }
 }

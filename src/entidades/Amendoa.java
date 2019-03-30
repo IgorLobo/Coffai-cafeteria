@@ -7,7 +7,7 @@ package entidades;
 public class Amendoa {
 
     private int id;
-    private Double intensidade;
+    private double intensidade;
 
     public Amendoa() {
         this.id = 0;
