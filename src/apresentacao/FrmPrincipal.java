@@ -37,7 +37,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuCadCliente = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuCadProduto = new javax.swing.JMenuItem();
+        mnuCadAparencia = new javax.swing.JMenuItem();
+        mnuCadAroma = new javax.swing.JMenuItem();
+        mnuCadSabor = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         mnuSair = new javax.swing.JMenuItem();
@@ -72,14 +75,41 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(mnuCadCliente);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem1.setText("Produto");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnuCadProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        mnuCadProduto.setText("Produto");
+        mnuCadProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnuCadProdutoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(mnuCadProduto);
+
+        mnuCadAparencia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK));
+        mnuCadAparencia.setText("Aparência");
+        mnuCadAparencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCadAparenciaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuCadAparencia);
+
+        mnuCadAroma.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        mnuCadAroma.setText("Aroma");
+        mnuCadAroma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCadAromaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuCadAroma);
+
+        mnuCadSabor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
+        mnuCadSabor.setText("Sabor");
+        mnuCadSabor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCadSaborActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuCadSabor);
 
         jMenuBar1.add(jMenu1);
 
@@ -136,7 +166,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         sair();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnuCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadProdutoActionPerformed
         try {
 
             FrmCadCafe frm = new FrmCadCafe(this.pnlPrincipal);
@@ -146,7 +176,43 @@ public class FrmPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mnuCadProdutoActionPerformed
+
+    private void mnuCadAparenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadAparenciaActionPerformed
+        try {
+
+            FrmAparencia frm = new FrmAparencia(this.pnlPrincipal);
+            this.pnlPrincipal.add(frm);
+            frm.setVisible(true);
+            frm.setPosicao();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_mnuCadAparenciaActionPerformed
+
+    private void mnuCadAromaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadAromaActionPerformed
+       try {
+
+        FrmAroma frm = new FrmAroma(this.pnlPrincipal);
+            this.pnlPrincipal.add(frm);
+            frm.setVisible(true);
+            frm.setPosicao();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_mnuCadAromaActionPerformed
+
+    private void mnuCadSaborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadSaborActionPerformed
+         try {
+
+        FrmSabor frm = new FrmSabor(this.pnlPrincipal);
+            this.pnlPrincipal.add(frm);
+            frm.setVisible(true);
+            frm.setPosicao();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_mnuCadSaborActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +221,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -188,8 +254,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem mnuCadAparencia;
+    private javax.swing.JMenuItem mnuCadAroma;
     private javax.swing.JMenuItem mnuCadCliente;
+    private javax.swing.JMenuItem mnuCadProduto;
+    private javax.swing.JMenuItem mnuCadSabor;
     private javax.swing.JMenuItem mnuSair;
     private javax.swing.JDesktopPane pnlPrincipal;
     // End of variables declaration//GEN-END:variables
