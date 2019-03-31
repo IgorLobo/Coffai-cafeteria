@@ -34,4 +34,8 @@ public class Turbidez {
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
+
+    public String toString() {
+        return String.format("%.2f%%", getQuantidade());
+    }
 }

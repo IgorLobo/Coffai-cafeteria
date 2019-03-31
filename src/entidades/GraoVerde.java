@@ -45,5 +45,9 @@ public class GraoVerde {
     public void setAmostra(String amostra) {
         this.amostra = amostra;
     }
+    
+    public String toString() {
+        return String.format("%s - %.2f%%", getAmostra(), getQuantidade());
+    }
 
 }

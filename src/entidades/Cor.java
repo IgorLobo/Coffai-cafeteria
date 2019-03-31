@@ -34,4 +34,8 @@ public class Cor {
     public void setCor(String cor) {
         this.cor = cor;
     }
+    
+    public String toString() {
+        return String.format("%s", getCor());
+    }
 }

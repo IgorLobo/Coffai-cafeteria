@@ -95,7 +95,7 @@ public class PGostoAmargo {
             GostoAmargo gostoAmargo = new GostoAmargo();
             gostoAmargo.setId(rs.getInt("id"));
             gostoAmargo.setQuantidade(rs.getDouble("quantidade"));
-            gostoAmargo.setIntensidade("intensidade");
+            gostoAmargo.setIntensidade(rs.getString("intensidade"));
             lista.add(gostoAmargo);
         }
         rs.close();

@@ -46,4 +46,8 @@ public class Queimado {
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
+
+    public String toString() {
+        return String.format("%s - %.2f%%", getIntensidade(), getQuantidade());
+    }
 }

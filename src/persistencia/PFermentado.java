@@ -74,7 +74,7 @@ public class PFermentado {
         if (rs.next()) {
             fermentado.setId(rs.getInt("id"));
             fermentado.setQuantidade(rs.getDouble("quantidade"));
-            fermentado.setIntensidade("intensidade");
+            fermentado.setIntensidade(rs.getString("intensidade"));
         }
 
         rs.close();
@@ -96,7 +96,7 @@ public class PFermentado {
             Fermentado fermentado = new Fermentado();
             fermentado.setId(rs.getInt("id"));
             fermentado.setQuantidade(rs.getDouble("quantidade"));
-            fermentado.setIntensidade("intensidade");
+            fermentado.setIntensidade(rs.getString("intensidade"));
             lista.add(fermentado);
         }
         rs.close();

@@ -94,7 +94,7 @@ public class PQueimado {
 
         while (rs.next()) {
             Queimado queimado = new Queimado();
-            queimado.setId(rs.getInt(" id"));
+            queimado.setId(rs.getInt("id"));
             queimado.setQuantidade(rs.getDouble("quantidade"));
             queimado.setIntensidade(rs.getString("intensidade"));
             lista.add(queimado);

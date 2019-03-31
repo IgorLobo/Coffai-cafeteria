@@ -45,5 +45,9 @@ public class GostoAmargo {
     public void setIntensidade(String intensidade) {
         this.intensidade = intensidade;
     }
+    
+    public String toString() {
+        return String.format("%s - %.2f%%", getIntensidade(), getQuantidade());
+    }
 
 }
