@@ -7,6 +7,9 @@ package apresentacao;
 
 import entidades.Cliente;
 import java.awt.Dimension;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import negocio.NCliente;
@@ -18,6 +21,7 @@ import negocio.NCliente;
 public class FrmCadCliente extends javax.swing.JInternalFrame {
 
     JDesktopPane pnlPrincipal;
+    private Object formatter;
 
     /**
      * Creates new form FrmCadCliente
@@ -275,6 +279,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
             }
 
             cli.setNome(txtNome.getText());
+            cli.setDataNascimento(Converter(txtNascimeto.getText()));
             cli.setCpf(txtCpf.getText());
             cli.setLogradouro(txtEndereco.getText());
             cli.setNumero(txtNumero.getText());
@@ -283,8 +288,8 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
             cli.setCep(txtCep.getText());
             cli.setBairro(txtBairro.getText());
             cli.setCidade(txtCidade.getText());
-            cli.setTelefone(txtTelefone.getText());      
-        
+            cli.setTelefone(txtTelefone.getText());
+
             new NCliente().salvar(cli);
 
             JOptionPane.showMessageDialog(this, "Operação "
@@ -318,13 +323,13 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         try {
             int resposta = JOptionPane.showConfirmDialog(this,
                     "Deseja realmente excluir o cliente?",
-                    "Sistema Bancário",
+                    "Coffai Café",
                     JOptionPane.YES_NO_OPTION);
 
             if (resposta == JOptionPane.YES_OPTION) {
                 new NCliente().excluir(Integer.parseInt(txtId.getText()));
                 limpar();
-                JOptionPane.showMessageDialog(this, 
+                JOptionPane.showMessageDialog(this,
                         "Exclusão efetuada com sucesso!");
 
             }
@@ -369,8 +374,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
 
         txtId.setText("");
         txtNome.setText("");
-        txtCpf.setText("");
-        txtEndereco.setText("");
+        txtNascimeto.setText("");
         txtCpf.setText("");
         txtEndereco.setText("");
         txtNumero.setText("");
@@ -389,13 +393,29 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         txtId.setText(cliente.getId() + "");
         txtNome.setText(cliente.getNome());
         txtEndereco.setText(cliente.getLogradouro());
+        txtCpf.setText(cliente.getCpf());
+        txtNumero.setText(cliente.getNumero());
+        txtQuadra.setText(cliente.getQuadra());
+        txtLote.setText(cliente.getLote());
+        txtCep.setText(cliente.getCep());
+        txtBairro.setText(cliente.getBairro());
+        txtCidade.setText(cliente.getCidade());
+        txtTelefone.setText(cliente.getTelefone());
 
         btnExcluir.setEnabled(true);
 
     }
-    
+
     public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+    }
+
+    private Date Converter(String data) throws ParseException{
+        data=txtNascimeto.getText();
+     SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+    Date date = (Date)format.parse(data);
+
+    return date;
     }
 }
