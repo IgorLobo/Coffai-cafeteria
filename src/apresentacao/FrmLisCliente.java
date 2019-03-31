@@ -5,7 +5,7 @@
  */
 package apresentacao;
 
-import entidade.Cliente;
+import entidades.Cliente;
 import java.util.Vector;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -116,7 +116,7 @@ public class FrmLisCliente extends javax.swing.JInternalFrame {
             Vector<String> cabecalho = new Vector();
             cabecalho.add("Id");
             cabecalho.add("Nome");
-            cabecalho.add("Endereço");
+            cabecalho.add("Cpf");
 
             Vector detalhe = new Vector();
 
@@ -125,7 +125,7 @@ public class FrmLisCliente extends javax.swing.JInternalFrame {
                 
                 linha.add(cliente.getId()+ "");
                 linha.add(cliente.getNome());
-                linha.add(cliente.getEndereco());
+                linha.add(cliente.getCpf());
                 detalhe.add(linha);
 
             }

@@ -5,6 +5,7 @@
  */
 package apresentacao;
 
+import entidades.Cafe;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -26,6 +27,11 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
     }
 
     public FrmCadCafe(JDesktopPane parametro) {
+        this();
+        pnlPrincipal = parametro;
+    }
+    
+    public FrmCadCafe(JDesktopPane parametro,Cafe cafe) {
         this();
         pnlPrincipal = parametro;
     }
