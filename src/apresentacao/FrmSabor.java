@@ -85,20 +85,44 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("Fermentado:");
 
+        cbSabor_Fermentado.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Fermentado.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Fermentado.setPreferredSize(new java.awt.Dimension(80, 20));
+
+        cbSabor_Adstringente.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Adstringente.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Adstringente.setPreferredSize(new java.awt.Dimension(80, 20));
+
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Adstringente:");
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("Queimado:");
 
+        cbSabor_Queimado.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Queimado.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Queimado.setPreferredSize(new java.awt.Dimension(80, 20));
+
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel17.setText("Gosto amargo:");
+
+        cbSabor_Amargo.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Amargo.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Amargo.setPreferredSize(new java.awt.Dimension(80, 20));
+
+        cbSabor_Doce.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Doce.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Doce.setPreferredSize(new java.awt.Dimension(80, 20));
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel18.setText("Gosto doce:");
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Gosto acido:");
+
+        cbSabor_Acido.setMaximumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Acido.setMinimumSize(new java.awt.Dimension(80, 20));
+        cbSabor_Acido.setPreferredSize(new java.awt.Dimension(80, 20));
 
         jbIncluir_Fermentado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
         jbIncluir_Fermentado.setMaximumSize(new java.awt.Dimension(20, 20));
@@ -236,11 +260,11 @@ public class FrmSabor extends javax.swing.JInternalFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbSabor_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cbSabor_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel16)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbSabor_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbSabor_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -263,9 +287,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cbSabor_Doce, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cbSabor_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(cbSabor_Acido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cbSabor_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cbSabor_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cbSabor_Acido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -283,7 +307,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(jLabel1)))
@@ -357,7 +381,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbExcluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AdstringenteActionPerformed
     try {
-            Adstringente selecionado = (Adstringente) cbSabor_Fermentado.getSelectedItem();
+            Adstringente selecionado = (Adstringente) cbSabor_Adstringente.getSelectedItem();
             new NAdstringente().excluir(selecionado.getId());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -388,7 +412,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbExcluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_QueimadoActionPerformed
         try {
-            Queimado selecionado = (Queimado) cbSabor_Fermentado.getSelectedItem();
+            Queimado selecionado = (Queimado) cbSabor_Queimado.getSelectedItem();
             new NQueimado().excluir(selecionado.getId());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -397,7 +421,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbExcluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AmargoActionPerformed
         try {
-            GostoAmargo selecionado = (GostoAmargo) cbSabor_Fermentado.getSelectedItem();
+            GostoAmargo selecionado = (GostoAmargo) cbSabor_Amargo.getSelectedItem();
             new NGostoAmargo().excluir(selecionado.getId());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -406,8 +430,8 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbExcluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_Gosto_DoceActionPerformed
         try {
-            GostoAmargo selecionado = (GostoAmargo) cbSabor_Fermentado.getSelectedItem();
-            new NGostoAmargo().excluir(selecionado.getId());
+            GostoDoce selecionado = (GostoDoce) cbSabor_Doce.getSelectedItem();
+            new NGostoDoce().excluir(selecionado.getId());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -415,7 +439,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbExcluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AcidoActionPerformed
         try {
-            GostoAcido selecionado = (GostoAcido) cbSabor_Fermentado.getSelectedItem();
+            GostoAcido selecionado = (GostoAcido) cbSabor_Acido.getSelectedItem();
             new NGostoAcido().excluir(selecionado.getId());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
