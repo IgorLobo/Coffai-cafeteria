@@ -35,12 +35,14 @@ public class FrmAroma extends javax.swing.JInternalFrame {
      */
     public FrmAroma() {
         initComponents();
+        carregarComboBox();
 
     }
 
     public FrmAroma(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
+        carregarComboBox();
     }
 
     /**

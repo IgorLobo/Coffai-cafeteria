@@ -29,12 +29,14 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
      */
     public FrmAparencia() {
         initComponents();
+        carregarComboBox();
 
     }
 
     public FrmAparencia(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
+        carregarComboBox();
     }
 
     /**
