@@ -22,10 +22,10 @@ public class PCafe {
     }
 
     public void incluir(Cafe parametro) throws SQLException {
-        String sql = "INSERT INTO Cafe(Nome, Preco, Popularidade, CorId, OleosidadeId, TurbidezId, GraoVerdeId, "
-                + "AromaDoceId, CaramelizadoId, AmendoaId, AromaFermentadoId, AromaQueimadoId, "
-                + "SaborFermentoId, AdstringenteId, SaborQueimadoId, GostoAmargoId, SaborDoceId, "
-                + "GostoAcidoId)"
+        String sql = "INSERT INTO cafe(nome, preco, popularidade, corid, oleosidadeid, turbidezid, graoverdeid, "
+                + "aromadoceid, caramelizadoid, amendoaid, aromafermentadoid, aromaqueimadoid, "
+                + "saborfermentoid, adstringenteid, saborqueimadoid, gostoamargoid, sabordoceid, "
+                + "gostoacidoid)"
                 + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -53,30 +53,30 @@ public class PCafe {
     }
 
     public void alterar(Cafe parametro) throws SQLException {
-        String sql = "UPDATE Cafe"
+        String sql = "UPDATE cafe"
                 + " SET "
-                + " Nome = ?,"
-                + " Preco = ?,"
-                + " Popularidade = ?,"
-                + " CorId = ?,"
-                + " OleosidadeId = ?,"
-                + " TurbidezId = ?,"
-                + " GraoVerdeId = ?,"
-                + " AromaDoceId = ?,"
-                + " CaramelizadoId = ?,"
-                + " AmendoaId = ?,"
-                + " AromaFermentadoId = ?,"
-                + " AromaQueimadoId = ?,"
-                + " SaborFermentoId = ?,"
-                + " AdstringenteId = ?,"
-                + " SaborQueimadoId = ?,"
-                + " GostoAmargoId = ?,"
-                + " SaborDoceId = ?,"
-                + " GostoAcidoId = ?"
+                + " nome = ?,"
+                + " preco = ?,"
+                + " popularidade = ?,"
+                + " corid = ?,"
+                + " oleosidadeid = ?,"
+                + " turbidezid = ?,"
+                + " graoverdeid = ?,"
+                + " aromavoceid = ?,"
+                + " caramelizadoid = ?,"
+                + " amendoaid = ?,"
+                + " aromafermentadoid = ?,"
+                + " aromaqueimadoid = ?,"
+                + " saborfermentoid = ?,"
+                + " adstringenteid = ?,"
+                + " saborqueimadoid = ?,"
+                + " gostoamargoid = ?,"
+                + " sabordoceid = ?,"
+                + " gostoacidoid = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
-                prd.setString(1, parametro.getNome());
+        prd.setString(1, parametro.getNome());
         prd.setDouble(2, parametro.getPreco());
         prd.setString(3, parametro.getPopularidade());
         prd.setInt(4, parametro.getCorId());
@@ -101,7 +101,7 @@ public class PCafe {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Cafe"
+        String sql = "DELETE FROM cafe"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -113,7 +113,7 @@ public class PCafe {
     }
 
     public Cafe consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Cafe"
+        String sql = "SELECT * FROM cafe"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -123,25 +123,25 @@ public class PCafe {
 
         Cafe cafe = new Cafe();
         if (rs.next()) {
-            cafe.setId(rs.getInt("Id")); 
-            cafe.setNome(rs.getString("Nome"));
-            cafe.setPreco(rs.getDouble("Preco"));
-            cafe.setPopularidade(rs.getString("Popularidade"));
-            cafe.setCorId(rs.getInt("corId"));
-            cafe.setOleosidadeId(rs.getInt("oleosidadeId"));
-            cafe.setTurbidezId(rs.getInt("turbidezId"));
-            cafe.setGraoVerdeId(rs.getInt("graoVerdeId"));
-            cafe.setAromaDoceId(rs.getInt("aromaDoceId"));
-            cafe.setCaramelizadoId(rs.getInt("caramelizadoId"));
-            cafe.setAmendoaId(rs.getInt("amendoaId"));
-            cafe.setAromaFermentadoId(rs.getInt("aromaFermentadoId"));
-            cafe.setAromaQueimadoId(rs.getInt("aromaQueimadoId"));
-            cafe.setSaborFermentadoId(rs.getInt("saborFermentadoId"));
-            cafe.setAdstringenteId(rs.getInt("adstringenteId"));
-            cafe.setSaborQueimadoId(rs.getInt("saborQueimadoId"));
-            cafe.setGostoAmargoId(rs.getInt("gostoAmargoId"));
-            cafe.setSaborDoceId(rs.getInt("saborDoceId"));
-            cafe.setGostoAcidoId(rs.getInt("gostoAcidoId"));
+            cafe.setId(rs.getInt("id"));
+            cafe.setNome(rs.getString("nome"));
+            cafe.setPreco(rs.getDouble("preco"));
+            cafe.setPopularidade(rs.getString("popularidade"));
+            cafe.setCorId(rs.getInt("corid"));
+            cafe.setOleosidadeId(rs.getInt("oleosidadeid"));
+            cafe.setTurbidezId(rs.getInt("turbidezid"));
+            cafe.setGraoVerdeId(rs.getInt("graoVerdeid"));
+            cafe.setAromaDoceId(rs.getInt("aromaDoceid"));
+            cafe.setCaramelizadoId(rs.getInt("caramelizadoid"));
+            cafe.setAmendoaId(rs.getInt("amendoaid"));
+            cafe.setAromaFermentadoId(rs.getInt("aromaFermentadoid"));
+            cafe.setAromaQueimadoId(rs.getInt("aromaQueimadoid"));
+            cafe.setSaborFermentadoId(rs.getInt("saborFermentadoid"));
+            cafe.setAdstringenteId(rs.getInt("adstringenteid"));
+            cafe.setSaborQueimadoId(rs.getInt("saborQueimadoid"));
+            cafe.setGostoAmargoId(rs.getInt("gostoAmargoid"));
+            cafe.setSaborDoceId(rs.getInt("saborDoceid"));
+            cafe.setGostoAcidoId(rs.getInt("gostoAcidoid"));
             cafe.obterItensCafe();
         }
         rs.close();
@@ -151,7 +151,7 @@ public class PCafe {
     }
 
     public List<Cafe> listar() throws SQLException {
-        String sql = "SELECT * FROM Cafe";
+        String sql = "SELECT * FROM cafe";
 
         Statement stm = cnn.createStatement();
 
@@ -161,25 +161,25 @@ public class PCafe {
 
         while (rs.next()) {
             Cafe cafe = new Cafe();
-            cafe.setId(rs.getInt("Id")); 
-            cafe.setNome(rs.getString("Nome"));
-            cafe.setPreco(rs.getDouble("Preco"));
-            cafe.setPopularidade(rs.getString("Popularidade"));
-            cafe.setCorId(rs.getInt("corId"));
-            cafe.setOleosidadeId(rs.getInt("oleosidadeId"));
-            cafe.setTurbidezId(rs.getInt("turbidezId"));
-            cafe.setGraoVerdeId(rs.getInt("graoVerdeId"));
-            cafe.setAromaDoceId(rs.getInt("aromaDoceId"));
-            cafe.setCaramelizadoId(rs.getInt("caramelizadoId"));
-            cafe.setAmendoaId(rs.getInt("amendoaId"));
-            cafe.setAromaFermentadoId(rs.getInt("aromaFermentadoId"));
-            cafe.setAromaQueimadoId(rs.getInt("aromaQueimadoId"));
-            cafe.setSaborFermentadoId(rs.getInt("saborFermentadoId"));
-            cafe.setAdstringenteId(rs.getInt("adstringenteId"));
-            cafe.setSaborQueimadoId(rs.getInt("saborQueimadoId"));
-            cafe.setGostoAmargoId(rs.getInt("gostoAmargoId"));
-            cafe.setSaborDoceId(rs.getInt("saborDoceId"));
-            cafe.setGostoAcidoId(rs.getInt("gostoAcidoId"));
+            cafe.setId(rs.getInt("id"));
+            cafe.setNome(rs.getString("nome"));
+            cafe.setPreco(rs.getDouble("preco"));
+            cafe.setPopularidade(rs.getString("popularidade"));
+            cafe.setCorId(rs.getInt("corid"));
+            cafe.setOleosidadeId(rs.getInt("oleosidadeid"));
+            cafe.setTurbidezId(rs.getInt("turbidezid"));
+            cafe.setGraoVerdeId(rs.getInt("graoVerdeid"));
+            cafe.setAromaDoceId(rs.getInt("aromaDoceid"));
+            cafe.setCaramelizadoId(rs.getInt("caramelizadoid"));
+            cafe.setAmendoaId(rs.getInt("amendoaid"));
+            cafe.setAromaFermentadoId(rs.getInt("aromaFermentadoid"));
+            cafe.setAromaQueimadoId(rs.getInt("aromaQueimadoid"));
+            cafe.setSaborFermentadoId(rs.getInt("saborFermentadoid"));
+            cafe.setAdstringenteId(rs.getInt("adstringenteid"));
+            cafe.setSaborQueimadoId(rs.getInt("saborQueimadoid"));
+            cafe.setGostoAmargoId(rs.getInt("gostoAmargoid"));
+            cafe.setSaborDoceId(rs.getInt("saborDoceid"));
+            cafe.setGostoAcidoId(rs.getInt("gostoAcidoid"));
             cafe.obterItensCafe();
             lista.add(cafe);
         }

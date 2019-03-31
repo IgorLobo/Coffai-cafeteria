@@ -22,7 +22,7 @@ public class PGraoVerde {
     }
     
     public void incluir(GraoVerde parametro) throws SQLException {
-        String sql = "INSERT INTO GraoVerde(Quantidade, Amostra) "
+        String sql = "INSERT INTO graoverde(quantidade, amostra) "
                 + "VALUES (?, ?)";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -34,10 +34,10 @@ public class PGraoVerde {
     }
     
     public void alterar(GraoVerde parametro) throws SQLException {
-        String sql = "UPDATE GraoVerde"
+        String sql = "UPDATE graoverde"
                 + " SET"
-                + " Quantidade = ?,"
-                + " Amostra = ?,"
+                + " quantidade = ?,"
+                + " amostra = ?"
                 + " WHERE id = ?";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PGraoVerde {
     }
     
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM GraoVerde"
+        String sql = "DELETE FROM graoverde"
                 + " WHERE id = ?";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class PGraoVerde {
     }
     
     public GraoVerde consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM GraoVerde"
+        String sql = "SELECT * FROM graoverde"
                 + " WHERE id = ?";
         
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -72,9 +72,9 @@ public class PGraoVerde {
         
         GraoVerde graoVerde = new GraoVerde();
         if (rs.next()) {
-            graoVerde.setId(rs.getInt("Id"));
-            graoVerde.setQuantidade(rs.getDouble("Quantidade"));
-            graoVerde.setAmostra(rs.getString("Amostra"));
+            graoVerde.setId(rs.getInt("id"));
+            graoVerde.setQuantidade(rs.getDouble("quantidade"));
+            graoVerde.setAmostra(rs.getString("amostra"));
         }
         
         rs.close();
@@ -84,7 +84,7 @@ public class PGraoVerde {
     }
     
     public List<GraoVerde> listar() throws SQLException {
-        String sql = "SELECT * FROM GraoVerde";
+        String sql = "SELECT * FROM graoverde";
         
         Statement stm = cnn.createStatement();
         
@@ -94,9 +94,9 @@ public class PGraoVerde {
         
         while (rs.next()) {
             GraoVerde graoVerde = new GraoVerde();
-            graoVerde.setId(rs.getInt("Id"));
-            graoVerde.setQuantidade(rs.getDouble("Quantidade"));
-            graoVerde.setAmostra(rs.getString("Amostra"));
+            graoVerde.setId(rs.getInt("id"));
+            graoVerde.setQuantidade(rs.getDouble("quantidade"));
+            graoVerde.setAmostra(rs.getString("amostra"));
             lista.add(graoVerde);
         }
         rs.close();

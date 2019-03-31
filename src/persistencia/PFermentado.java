@@ -22,8 +22,8 @@ public class PFermentado {
     }
 
     public void incluir(Fermentado parametro) throws SQLException {
-        String sql = "INSERT INTO Fermentado(Quantidade, Intensidade) "
-                + "VALUES (?)";
+        String sql = "INSERT INTO fermentado(quantidade, intensidade) "
+                + "VALUES (?, ?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
         prd.setDouble(1, parametro.getQuantidade());
@@ -34,10 +34,10 @@ public class PFermentado {
     }
 
     public void alterar(Fermentado parametro) throws SQLException {
-        String sql = "UPDATE Fermentado"
+        String sql = "UPDATE fermentado"
                 + " SET"
-                + " Quantidade = ?,"
-                + " Intensidade = ?,"
+                + " quantidade = ?,"
+                + " intensidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PFermentado {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Fermentado"
+        String sql = "DELETE FROM fermentado"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class PFermentado {
     }
 
     public Fermentado consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Fermentado"
+        String sql = "SELECT * FROM fermentado"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -72,9 +72,9 @@ public class PFermentado {
         
         Fermentado fermentado  = new Fermentado();
         if (rs.next()) {
-            fermentado.setId(rs.getInt("Id"));
-            fermentado.setQuantidade(rs.getDouble("Quantidade"));
-            fermentado.setIntensidade("Intensidade");
+            fermentado.setId(rs.getInt("id"));
+            fermentado.setQuantidade(rs.getDouble("quantidade"));
+            fermentado.setIntensidade("intensidade");
         }
 
         rs.close();
@@ -84,7 +84,7 @@ public class PFermentado {
     }
 
     public List<Fermentado> listar() throws SQLException {
-        String sql = "SELECT * FROM Fermentado";
+        String sql = "SELECT * FROM fermentado";
 
         Statement stm = cnn.createStatement();
 
@@ -94,9 +94,9 @@ public class PFermentado {
 
         while (rs.next()) {
             Fermentado fermentado = new Fermentado();
-            fermentado.setId(rs.getInt("Id"));
-            fermentado.setQuantidade(rs.getDouble("Quantidade"));
-            fermentado.setIntensidade("Intensidade");
+            fermentado.setId(rs.getInt("id"));
+            fermentado.setQuantidade(rs.getDouble("quantidade"));
+            fermentado.setIntensidade("intensidade");
             lista.add(fermentado);
         }
         rs.close();

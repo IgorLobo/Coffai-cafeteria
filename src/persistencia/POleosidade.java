@@ -22,7 +22,7 @@ public class POleosidade {
     }
 
     public void incluir(Oleosidade parametro) throws SQLException {
-        String sql = "INSERT INTO Oleosidade(Quantidade) "
+        String sql = "INSERT INTO oleosidade(quantidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class POleosidade {
     }
 
     public void alterar(Oleosidade parametro) throws SQLException {
-        String sql = "UPDATE Oleosidade"
+        String sql = "UPDATE oleosidade"
                 + " SET"
-                + " Quantidade = ?,"
+                + " quantidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class POleosidade {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Oleosidade"
+        String sql = "DELETE FROM oleosidade"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class POleosidade {
     }
 
     public Oleosidade consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Oleosidade"
+        String sql = "SELECT * FROM oleosidade"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class POleosidade {
         
         Oleosidade oleosidade  = new Oleosidade();
         if (rs.next()) {
-            oleosidade.setId(rs.getInt("Id"));
-            oleosidade.setQuantidade(rs.getDouble("Quantidade"));
+            oleosidade.setId(rs.getInt("id"));
+            oleosidade.setQuantidade(rs.getDouble("quantidade"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class POleosidade {
     }
 
     public List<Oleosidade> listar() throws SQLException {
-        String sql = "SELECT * FROM Oleosidade";
+        String sql = "SELECT * FROM oleosidade";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class POleosidade {
 
         while (rs.next()) {
             Oleosidade oleosidade = new Oleosidade();
-            oleosidade.setId(rs.getInt("Id"));
-            oleosidade.setQuantidade(rs.getDouble("Quantidade"));
+            oleosidade.setId(rs.getInt("id"));
+            oleosidade.setQuantidade(rs.getDouble("quantidade"));
             lista.add(oleosidade);
         }
         rs.close();

@@ -22,7 +22,7 @@ public class PQueimado {
     }
     
     public void incluir(Queimado parametro) throws SQLException {
-        String sql = "INSERT INTO Queimado(Quantidade, Intensidade) "
+        String sql = "INSERT INTO queimado(quantidade, intensidade) "
                 + "VALUES (?, ?)";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -34,10 +34,10 @@ public class PQueimado {
     }
     
     public void alterar(Queimado parametro) throws SQLException {
-        String sql = "UPDATE Queimado"
+        String sql = "UPDATE queimado"
                 + " SET"
-                + " Quantidade = ?,"
-                + " Intensidade = ?,"
+                + " quantidade = ?,"
+                + " Intensidade = ?"
                 + " WHERE id = ?";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PQueimado {
     }
     
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Queimado"
+        String sql = "DELETE FROM queimado"
                 + " WHERE id = ?";
         
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class PQueimado {
     }
     
     public Queimado consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Queimado"
+        String sql = "SELECT * FROM queimado"
                 + " WHERE id = ?";
         
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -72,9 +72,9 @@ public class PQueimado {
         
         Queimado queimado = new Queimado();
         if (rs.next()) {
-            queimado.setId(rs.getInt("Id"));
-            queimado.setQuantidade(rs.getDouble("Quantidade"));
-            queimado.setIntensidade(rs.getString("Intensidade"));
+            queimado.setId(rs.getInt("id"));
+            queimado.setQuantidade(rs.getDouble("quantidade"));
+            queimado.setIntensidade(rs.getString("intensidade"));
         }
         
         rs.close();
@@ -84,19 +84,19 @@ public class PQueimado {
     }
     
     public List<Queimado> listar() throws SQLException {
-        String sql = "SELECT * FROM Queimado";
+        String sql = "SELECT * FROM queimado";
         
         Statement stm = cnn.createStatement();
-        
+
         ResultSet rs = stm.executeQuery(sql);
-        
+
         List<Queimado> lista = new ArrayList<>();
-        
+
         while (rs.next()) {
             Queimado queimado = new Queimado();
-            queimado.setId(rs.getInt("Id"));
-            queimado.setQuantidade(rs.getDouble("Quantidade"));
-            queimado.setIntensidade(rs.getString("Intensidade"));
+            queimado.setId(rs.getInt(" id"));
+            queimado.setQuantidade(rs.getDouble("quantidade"));
+            queimado.setIntensidade(rs.getString("intensidade"));
             lista.add(queimado);
         }
         rs.close();

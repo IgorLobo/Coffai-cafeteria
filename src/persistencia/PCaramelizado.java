@@ -22,7 +22,7 @@ public class PCaramelizado {
     }
 
     public void incluir(Caramelizado parametro) throws SQLException {
-        String sql = "INSERT INTO Caramelizado(Intensidade) "
+        String sql = "INSERT INTO caramelizado(intensidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class PCaramelizado {
     }
 
     public void alterar(Caramelizado parametro) throws SQLException {
-        String sql = "UPDATE Caramelizado"
+        String sql = "UPDATE caramelizado"
                 + " SET"
-                + " Intensidade = ?,"
+                + " intensidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class PCaramelizado {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Caramelizado"
+        String sql = "DELETE FROM caramelizado"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PCaramelizado {
     }
 
     public Caramelizado consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Caramelizado"
+        String sql = "SELECT * FROM caramelizado"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class PCaramelizado {
 
         Caramelizado caramelizado = new Caramelizado();
         if (rs.next()) {
-            caramelizado.setId(rs.getInt("Id"));
-            caramelizado.setIntensidade(rs.getDouble("Intensidade"));
+            caramelizado.setId(rs.getInt("id"));
+            caramelizado.setIntensidade(rs.getDouble("intensidade"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class PCaramelizado {
     }
 
     public List<Caramelizado> listar() throws SQLException {
-        String sql = "SELECT * FROM Caramelizado";
+        String sql = "SELECT * FROM caramelizado";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class PCaramelizado {
 
         while (rs.next()) {
             Caramelizado caramelizado = new Caramelizado();
-            caramelizado.setId(rs.getInt("Id"));
-            caramelizado.setIntensidade(rs.getDouble("Intensidade"));
+            caramelizado.setId(rs.getInt("id"));
+            caramelizado.setIntensidade(rs.getDouble("intensidade"));
             lista.add(caramelizado);
         }
         rs.close();

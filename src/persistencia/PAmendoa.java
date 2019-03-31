@@ -22,7 +22,7 @@ public class PAmendoa {
     }
 
     public void incluir(Amendoa parametro) throws SQLException {
-        String sql = "INSERT INTO Amendoa(Intensidade) "
+        String sql = "INSERT INTO amendoa(intensidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class PAmendoa {
     }
 
     public void alterar(Amendoa parametro) throws SQLException {
-        String sql = "UPDATE Amendoa"
+        String sql = "UPDATE amendoa"
                 + " SET"
-                + " Intensidade = ?,"
+                + " intensidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class PAmendoa {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Amendoa"
+        String sql = "DELETE FROM amendoa"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PAmendoa {
     }
 
     public Amendoa consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Amendoa"
+        String sql = "SELECT * FROM amendoa"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class PAmendoa {
 
         Amendoa amendoa = new Amendoa();
         if (rs.next()) {
-            amendoa.setId(rs.getInt("Id"));
-            amendoa.setIntensidade(rs.getDouble("Intensidade"));
+            amendoa.setId(rs.getInt("id"));
+            amendoa.setIntensidade(rs.getDouble("intensidade"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class PAmendoa {
     }
 
     public List<Amendoa> listar() throws SQLException {
-        String sql = "SELECT * FROM Amendoa";
+        String sql = "SELECT * FROM amendoa";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class PAmendoa {
 
         while (rs.next()) {
             Amendoa amendoa = new Amendoa();
-            amendoa.setId(rs.getInt("Id"));
-            amendoa.setIntensidade(rs.getDouble("Intensidade"));
+            amendoa.setId(rs.getInt("id"));
+            amendoa.setIntensidade(rs.getDouble("intensidade"));
             lista.add(amendoa);
         }
         rs.close();

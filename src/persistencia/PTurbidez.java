@@ -22,7 +22,7 @@ public class PTurbidez {
     }
 
     public void incluir(Turbidez parametro) throws SQLException {
-        String sql = "INSERT INTO Turbidez(Quantidade) "
+        String sql = "INSERT INTO turbidez(quantidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class PTurbidez {
     }
 
     public void alterar(Turbidez parametro) throws SQLException {
-        String sql = "UPDATE Turbidez"
+        String sql = "UPDATE turbidez"
                 + " SET"
-                + " Quantidade = ?,"
+                + " quantidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class PTurbidez {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Turbidez"
+        String sql = "DELETE FROM turbidez"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PTurbidez {
     }
 
     public Turbidez consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Turbidez"
+        String sql = "SELECT * FROM turbidez"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class PTurbidez {
         
         Turbidez turbidez  = new Turbidez();
         if (rs.next()) {
-            turbidez.setId(rs.getInt("Id"));
-            turbidez.setQuantidade(rs.getDouble("Quantidade"));
+            turbidez.setId(rs.getInt("id"));
+            turbidez.setQuantidade(rs.getDouble("quantidade"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class PTurbidez {
     }
 
     public List<Turbidez> listar() throws SQLException {
-        String sql = "SELECT * FROM Turbidez";
+        String sql = "SELECT * FROM turbidez";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class PTurbidez {
 
         while (rs.next()) {
             Turbidez trubidez = new Turbidez();
-            trubidez.setId(rs.getInt("Id"));
-            trubidez.setQuantidade(rs.getDouble("Quantidade"));
+            trubidez.setId(rs.getInt("id"));
+            trubidez.setQuantidade(rs.getDouble("quantidade"));
             lista.add(trubidez);
         }
         rs.close();

@@ -22,7 +22,7 @@ public class PCor {
     }
 
     public void incluir(Cor parametro) throws SQLException {
-        String sql = "INSERT INTO Cor(Cor) "
+        String sql = "INSERT INTO cor(cor) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class PCor {
     }
 
     public void alterar(Cor parametro) throws SQLException {
-        String sql = "UPDATE Cor"
+        String sql = "UPDATE cor"
                 + " SET"
-                + " Cor = ?,"
+                + " cor = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class PCor {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Cor"
+        String sql = "DELETE FROM cor"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PCor {
     }
 
     public Cor consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Cor"
+        String sql = "SELECT * FROM cor"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class PCor {
 
         Cor cor = new Cor();
         if (rs.next()) {
-            cor.setId(rs.getInt("Id"));
-            cor.setCor(rs.getString("Cor"));
+            cor.setId(rs.getInt("id"));
+            cor.setCor(rs.getString("cor"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class PCor {
     }
 
     public List<Cor> listar() throws SQLException {
-        String sql = "SELECT * FROM Cor";
+        String sql = "SELECT * FROM cor";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class PCor {
 
         while (rs.next()) {
             Cor cor = new Cor();
-            cor.setId(rs.getInt("Id"));
-            cor.setCor(rs.getString("Cor"));
+            cor.setId(rs.getInt("id"));
+            cor.setCor(rs.getString("cor"));
             lista.add(cor);
         }
         rs.close();

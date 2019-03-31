@@ -22,7 +22,7 @@ public class PGostoAmargo {
     }
 
     public void incluir(GostoAmargo parametro) throws SQLException {
-        String sql = "INSERT INTO GostoAmargo(Quantidade, Intensidade) "
+        String sql = "INSERT INTO gostoamargo(quantidade, intensidade) "
                 + "VALUES (?, ?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -34,10 +34,10 @@ public class PGostoAmargo {
     }
 
     public void alterar(GostoAmargo parametro) throws SQLException {
-        String sql = "UPDATE GostoAmargo"
+        String sql = "UPDATE gostoamargo"
                 + " SET"
-                + " Quantidade = ?,"
-                + " Intensidade = ?,"
+                + " quantidade = ?,"
+                + " intensidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PGostoAmargo {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM GostoAmargo"
+        String sql = "DELETE FROM gostoamargo"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class PGostoAmargo {
     }
 
     public GostoAmargo consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM GostoAmargo"
+        String sql = "SELECT * FROM gostoamargo"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -72,9 +72,9 @@ public class PGostoAmargo {
 
         GostoAmargo gostoAmargo = new GostoAmargo();
         if (rs.next()) {
-            gostoAmargo.setId(rs.getInt("Id"));
-            gostoAmargo.setQuantidade(rs.getDouble("Quantidade"));
-            gostoAmargo.setIntensidade(rs.getString("Intensidade"));
+            gostoAmargo.setId(rs.getInt("id"));
+            gostoAmargo.setQuantidade(rs.getDouble("quantidade"));
+            gostoAmargo.setIntensidade(rs.getString("intensidade"));
         }
         rs.close();
         cnn.close();
@@ -83,7 +83,7 @@ public class PGostoAmargo {
     }
 
     public List<GostoAmargo> listar() throws SQLException {
-        String sql = "SELECT * FROM GostoAmargo";
+        String sql = "SELECT * FROM gostoamargo";
 
         Statement stm = cnn.createStatement();
 
@@ -93,9 +93,9 @@ public class PGostoAmargo {
 
         while (rs.next()) {
             GostoAmargo gostoAmargo = new GostoAmargo();
-            gostoAmargo.setId(rs.getInt("Id"));
-            gostoAmargo.setQuantidade(rs.getDouble("Quantidade"));
-            gostoAmargo.setIntensidade("Intensidade");
+            gostoAmargo.setId(rs.getInt("id"));
+            gostoAmargo.setQuantidade(rs.getDouble("quantidade"));
+            gostoAmargo.setIntensidade("intensidade");
             lista.add(gostoAmargo);
         }
         rs.close();

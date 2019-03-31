@@ -22,7 +22,7 @@ public class PAdstringente {
     }
 
     public void incluir(Adstringente parametro) throws SQLException {
-        String sql = "INSERT INTO Adstringente(Quantidade) "
+        String sql = "INSERT INTO adstringente(quantidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -33,9 +33,9 @@ public class PAdstringente {
     }
 
     public void alterar(Adstringente parametro) throws SQLException {
-        String sql = "UPDATE Adstringente"
+        String sql = "UPDATE adstringente"
                 + " SET"
-                + " Quantidade = ?,"
+                + " quantidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class PAdstringente {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM Adstringente"
+        String sql = "DELETE FROM adstringente"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PAdstringente {
     }
 
     public Adstringente consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM Adstringente"
+        String sql = "SELECT * FROM adstringente"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -69,8 +69,8 @@ public class PAdstringente {
         
         Adstringente adstringente  = new Adstringente();
         if (rs.next()) {
-            adstringente.setId(rs.getInt("Id"));
-            adstringente.setQuantidade(rs.getDouble("Quantidade"));
+            adstringente.setId(rs.getInt("id"));
+            adstringente.setQuantidade(rs.getDouble("quantidade"));
         }
 
         rs.close();
@@ -80,7 +80,7 @@ public class PAdstringente {
     }
 
     public List<Adstringente> listar() throws SQLException {
-        String sql = "SELECT * FROM Adstringente";
+        String sql = "SELECT * FROM adstringente";
 
         Statement stm = cnn.createStatement();
 
@@ -90,8 +90,8 @@ public class PAdstringente {
 
         while (rs.next()) {
             Adstringente adstringente = new Adstringente();
-            adstringente.setId(rs.getInt("Id"));
-            adstringente.setQuantidade(rs.getDouble("Quantidade"));
+            adstringente.setId(rs.getInt("id"));
+            adstringente.setQuantidade(rs.getDouble("quantidade"));
             lista.add(adstringente);
         }
         rs.close();

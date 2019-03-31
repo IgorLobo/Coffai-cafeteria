@@ -22,7 +22,7 @@ public class PGostoDoce {
     }
 
     public void incluir(GostoDoce parametro) throws SQLException {
-        String sql = "INSERT INTO GostoDoce(Quantidade, Intensidade) "
+        String sql = "INSERT INTO gostodoce(quantidade, intensidade) "
                 + "VALUES (?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -34,10 +34,10 @@ public class PGostoDoce {
     }
 
     public void alterar(GostoDoce parametro) throws SQLException {
-        String sql = "UPDATE GostoDoce"
+        String sql = "UPDATE gostodoce"
                 + " SET"
-                + " Quantidade = ?,"
-                + " Intensidade = ?,"
+                + " quantidade = ?,"
+                + " intensidade = ?"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PGostoDoce {
     }
 
     public void excluir(int id) throws SQLException {
-        String sql = "DELETE FROM GostoDoce"
+        String sql = "DELETE FROM gostodoce"
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class PGostoDoce {
     }
 
     public GostoDoce consultar(int id) throws SQLException {
-        String sql = "SELECT * FROM GostoDoce"
+        String sql = "SELECT * FROM gostodoce"
                 + " WHERE id = ?";
 
         PreparedStatement stm = cnn.prepareStatement(sql);
@@ -72,9 +72,9 @@ public class PGostoDoce {
 
         GostoDoce gostoDoce = new GostoDoce();
         if (rs.next()) {
-            gostoDoce.setId(rs.getInt("Id"));
-            gostoDoce.setQuantidade(rs.getDouble("Quantidade"));
-            gostoDoce.setIntensidade(rs.getString("Intensidade"));
+            gostoDoce.setId(rs.getInt("id"));
+            gostoDoce.setQuantidade(rs.getDouble("quantidade"));
+            gostoDoce.setIntensidade(rs.getString("intensidade"));
         }
 
         rs.close();
@@ -84,7 +84,7 @@ public class PGostoDoce {
     }
 
     public List<GostoDoce> listar() throws SQLException {
-        String sql = "SELECT * FROM GostoDoce";
+        String sql = "SELECT * FROM gostodoce";
 
         Statement stm = cnn.createStatement();
 
@@ -94,9 +94,9 @@ public class PGostoDoce {
 
         while (rs.next()) {
             GostoDoce gostoDoce = new GostoDoce();
-            gostoDoce.setId(rs.getInt("Id"));
-            gostoDoce.setQuantidade(rs.getDouble("Quantidade"));
-            gostoDoce.setIntensidade(rs.getString("Intensidade"));
+            gostoDoce.setId(rs.getInt("id"));
+            gostoDoce.setQuantidade(rs.getDouble("quantidade"));
+            gostoDoce.setIntensidade(rs.getString("intensidade"));
             lista.add(gostoDoce);
         }
         rs.close();
