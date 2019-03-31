@@ -5,9 +5,15 @@
  */
 package apresentacao;
 
+import entidades.Cor;
+import entidades.Oleosidade;
+import entidades.Turbidez;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import negocio.NCor;
+import negocio.NOleosidade;
+import negocio.NTurbidez;
 
 /**
  *
@@ -43,17 +49,17 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel_Aparencia2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        cbCor = new javax.swing.JComboBox();
-        cbOleosidade = new javax.swing.JComboBox();
+        cbAparencia_Cor = new javax.swing.JComboBox();
+        cbAparencia_Oleosidade = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
-        cbTurbidez = new javax.swing.JComboBox();
+        cbAparencia_Turbidez = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
-        jbIncluir_Cor = new javax.swing.JToggleButton();
         jbExcluir_Cor = new javax.swing.JToggleButton();
-        jbIncluir_Oleosidade = new javax.swing.JToggleButton();
+        jbIncluir_Cor = new javax.swing.JToggleButton();
         jbExcluir_Oleosidade = new javax.swing.JToggleButton();
-        jbIncluir_Turbidez = new javax.swing.JToggleButton();
+        jbIncluir_Oleosidade = new javax.swing.JToggleButton();
         jbExcluir_Turbidez = new javax.swing.JToggleButton();
+        jbIncluir_Turbidez = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
@@ -82,29 +88,59 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Turbidez:");
 
-        jbIncluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbIncluir_Cor.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Cor.setMinimumSize(new java.awt.Dimension(20, 20));
-
-        jbExcluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
         jbExcluir_Cor.setMaximumSize(new java.awt.Dimension(20, 20));
         jbExcluir_Cor.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Cor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir_CorActionPerformed(evt);
+            }
+        });
 
-        jbIncluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbIncluir_Oleosidade.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Oleosidade.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Cor.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Cor.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Cor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluir_CorActionPerformed(evt);
+            }
+        });
 
-        jbExcluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
         jbExcluir_Oleosidade.setMaximumSize(new java.awt.Dimension(20, 20));
         jbExcluir_Oleosidade.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Oleosidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir_OleosidadeActionPerformed(evt);
+            }
+        });
 
-        jbIncluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbIncluir_Turbidez.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Turbidez.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Oleosidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Oleosidade.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Oleosidade.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Oleosidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluir_OleosidadeActionPerformed(evt);
+            }
+        });
 
-        jbExcluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbExcluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
         jbExcluir_Turbidez.setMaximumSize(new java.awt.Dimension(20, 20));
         jbExcluir_Turbidez.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Turbidez.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluir_TurbidezActionPerformed(evt);
+            }
+        });
+
+        jbIncluir_Turbidez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Turbidez.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Turbidez.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Turbidez.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluir_TurbidezActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/Aparencia.png"))); // NOI18N
 
@@ -123,25 +159,25 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                                .addComponent(cbTurbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbAparencia_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
                                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cbCor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbOleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cbAparencia_Cor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbAparencia_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel_Aparencia2Layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(jLabel1))
                 .addGap(50, 50, 50))
         );
@@ -156,24 +192,24 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(cbCor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbAparencia_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbExcluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbIncluir_Cor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(cbOleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAparencia_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jbExcluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbIncluir_Oleosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbExcluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbIncluir_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel_Aparencia2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
-                        .addComponent(cbTurbidez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cbAparencia_Turbidez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -193,11 +229,68 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbExcluir_CorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_CorActionPerformed
+         try {
+            Cor selecionado = (Cor) cbAparencia_Cor.getSelectedItem();
+            new NCor().excluir(selecionado.getId());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbExcluir_CorActionPerformed
+
+    private void jbExcluir_OleosidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_OleosidadeActionPerformed
+        try {
+            Oleosidade selecionado = (Oleosidade) cbAparencia_Oleosidade.getSelectedItem();
+            new NOleosidade().excluir(selecionado.getId());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbExcluir_OleosidadeActionPerformed
+
+    private void jbExcluir_TurbidezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_TurbidezActionPerformed
+        try {
+            Turbidez selecionado = (Turbidez) cbAparencia_Turbidez.getSelectedItem();
+            new NTurbidez().excluir(selecionado.getId());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbExcluir_TurbidezActionPerformed
+
+    private void jbIncluir_CorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_CorActionPerformed
+        try {
+            Cor cor = new Cor();
+            cor.setCor(capturarCor("Cor"));
+            new NCor().salvar(cor);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbIncluir_CorActionPerformed
+
+    private void jbIncluir_OleosidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_OleosidadeActionPerformed
+        try {
+            Oleosidade oleosidade = new Oleosidade();
+            oleosidade.setQuantidade(capturarPorcentagem("Oleosidade"));
+            new NOleosidade().salvar(oleosidade);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbIncluir_OleosidadeActionPerformed
+
+    private void jbIncluir_TurbidezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_TurbidezActionPerformed
+        try {
+            Turbidez turbidez = new Turbidez();
+            turbidez.setQuantidade(capturarPorcentagem("Oleosidade"));
+            new NTurbidez().Salvar(turbidez);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jbIncluir_TurbidezActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox cbCor;
-    private javax.swing.JComboBox cbOleosidade;
-    private javax.swing.JComboBox cbTurbidez;
+    private javax.swing.JComboBox cbAparencia_Cor;
+    private javax.swing.JComboBox cbAparencia_Oleosidade;
+    private javax.swing.JComboBox cbAparencia_Turbidez;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -219,6 +312,39 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
     public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+    }
+
+    private void carregarComboBox() {
+        try {
+            for (Cor obj : new NCor().listar()) {
+                cbAparencia_Cor.addItem(obj);
+            }
+            for (Oleosidade obj : new NOleosidade().listar()) {
+                cbAparencia_Oleosidade.addItem(obj);
+            }
+            for (Turbidez obj : new NTurbidez().listar()) {
+                cbAparencia_Turbidez.addItem(obj);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+
+    private double capturarPorcentagem(String nomeDoComponente) {
+        double porcentagem = -1;
+        do {
+            try {
+                porcentagem = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a porcentagem", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE));
+            } catch (Exception e) {
+                continue;
+            }
+        } while (porcentagem < 1 || porcentagem > 100);
+        return porcentagem;
+    }
+
+    private String capturarCor(String nomeDoComponente) {
+        return JOptionPane.showInputDialog(null, "Digite a cor", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE);
     }
 
 }
