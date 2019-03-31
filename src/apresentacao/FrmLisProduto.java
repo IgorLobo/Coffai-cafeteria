@@ -5,12 +5,13 @@
  */
 package apresentacao;
 
-import entidade.Produto;
+import entidades.Cafe;
+import entidades.Cafe;
 import java.util.Vector;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import negocio.NProduto;
+import negocio.NCafe;
 
 /**
  *
@@ -40,12 +41,12 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblClientes = new javax.swing.JTable();
+        tblCafe = new javax.swing.JTable();
 
         setClosable(true);
-        setTitle("Lista de Produtos");
+        setTitle("Lista de café");
 
-        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tblCafe.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -56,12 +57,12 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
 
             }
         ));
-        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblCafe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblClientesMousePressed(evt);
+                tblCafeMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tblClientes);
+        jScrollPane1.setViewportView(tblCafe);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,17 +84,17 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMousePressed
+    private void tblCafeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCafeMousePressed
         try {
             
-            int indice = tblClientes.getSelectedRow();
-            String id = tblClientes.getValueAt(indice, 0).toString();
+            int indice = tblCafe.getSelectedRow();
+            String id = tblCafe.getValueAt(indice, 0).toString();
             
-            Produto produto = new NProduto().consultar(
+            Cafe cafe = new NCafe().consultar(
                     Integer.parseInt(id));
             
             FrmCadCafe janela = new FrmCadCafe(
-                    pnlPrincipal, produto);
+                    pnlPrincipal, cafe);
             pnlPrincipal.add(janela);
             janela.setVisible(true);
             this.dispose();
@@ -102,12 +103,12 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-    }//GEN-LAST:event_tblClientesMousePressed
+    }//GEN-LAST:event_tblCafeMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblClientes;
+    private javax.swing.JTable tblCafe;
     // End of variables declaration//GEN-END:variables
 
     private void carregarTabela() {
@@ -117,24 +118,20 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
             cabecalho.add("Id");
             cabecalho.add("Nome");
             cabecalho.add("Valor");
-            cabecalho.add("Quantidade");
-            cabecalho.add("Codigo de barras");
 
             Vector detalhe = new Vector();
 
-            for (Produto produto : new NProduto().listar()) {
+            for (Cafe cafe : new NCafe().listar()) {
                 Vector<String> linha = new Vector();
                 
-                linha.add(produto.getId()+ "");
-                linha.add(produto.getNome());
-                linha.add(Double.toString(produto.getValor()));
-                linha.add(Integer.toString(produto.getQnt()));
-                linha.add(produto.getCodBarras());
+                linha.add(cafe.getId()+ "");
+                linha.add(cafe.getNome());
+                linha.add(Double.toString(cafe.getValor()));
                 detalhe.add(linha);
 
             }
             
-            tblClientes.setModel(new DefaultTableModel(detalhe,cabecalho));
+            tblCafe.setModel(new DefaultTableModel(detalhe,cabecalho));
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
