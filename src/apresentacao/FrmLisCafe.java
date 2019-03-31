@@ -15,18 +15,18 @@ import negocio.NCafe;
 
 /**
  *
- * @author aluno
+ * @author Igor
  */
-public class FrmLisProduto extends javax.swing.JInternalFrame {
+public class FrmLisCafe extends javax.swing.JInternalFrame {
 
     JDesktopPane pnlPrincipal;
     
-    public FrmLisProduto() {
+    public FrmLisCafe() {
         initComponents();
         carregarTabela();
     }
 
-    public FrmLisProduto(JDesktopPane parametro) {
+    public FrmLisCafe(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
     }
@@ -126,7 +126,7 @@ public class FrmLisProduto extends javax.swing.JInternalFrame {
                 
                 linha.add(cafe.getId()+ "");
                 linha.add(cafe.getNome());
-                linha.add(Double.toString(cafe.getValor()));
+                linha.add(Double.toString(cafe.getPreco()));
                 detalhe.add(linha);
 
             }
