@@ -347,6 +347,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             Fermentado fermentado = new Fermentado();
             fermentado.setQuantidade(capturarPorcentagem("Fermentado"));
             fermentado.setIntensidade(capturarIntensidade("Fermentado"));
+            for (Fermentado obj : new NFermentado().listar()) {
+                cbSabor_Fermentado.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -375,6 +378,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             Adstringente adstringente = new Adstringente();
             adstringente.setQuantidade(capturarPorcentagem("Adstringente"));
             new NAdstringente().salvar(adstringente);
+            for (Adstringente obj : new NAdstringente().listar()) {
+                cbSabor_Adstringente.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -421,6 +427,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             Queimado queimado = new Queimado();
             queimado.setQuantidade(capturarPorcentagem("Queimado"));
             new NQueimado().Salvar(queimado);
+            for (Queimado obj : new NQueimado().listar()) {
+                cbSabor_Queimado.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -431,6 +440,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             GostoAmargo gostoAmargo = new GostoAmargo();
             gostoAmargo.setQuantidade(capturarPorcentagem("Gosto Amargo"));
             new NGostoAmargo().salvar(gostoAmargo);
+            for (GostoAmargo obj : new NGostoAmargo().listar()) {
+                cbSabor_Amargo.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -441,6 +453,9 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             GostoDoce gostoDoce = new GostoDoce();
             gostoDoce.setQuantidade(capturarPorcentagem("Gosto Doce"));
             new NGostoDoce().salvar(gostoDoce);
+            for (GostoDoce obj : new NGostoDoce().listar()) {
+                cbSabor_Doce.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -449,8 +464,11 @@ public class FrmSabor extends javax.swing.JInternalFrame {
     private void jbIncluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AcidoActionPerformed
         try {
             GostoAcido gostoAcido = new GostoAcido();
-            gostoAcido.setQuantidade(capturarPorcentagem("Adstringente"));
+            gostoAcido.setQuantidade(capturarPorcentagem("Gosto acido"));
             new NGostoAcido().salvar(gostoAcido);
+            for (GostoAcido obj : new NGostoAcido().listar()) {
+                cbSabor_Acido.addItem(obj);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }

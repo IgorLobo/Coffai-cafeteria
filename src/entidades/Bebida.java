@@ -8,7 +8,7 @@ public class Bebida {
 
     private int Id;
     private String nome;
-    private float preco;
+    private double preco;
     private int quantidade;
 
     public Bebida() {
@@ -18,7 +18,7 @@ public class Bebida {
         this.quantidade = 0;
     }
 
-    public Bebida(int Id, String nome, float preco, int quantidade) {
+    public Bebida(int Id, String nome, double preco, int quantidade) {
         this.Id = Id;
         this.nome = nome;
         this.preco = preco;
@@ -41,11 +41,11 @@ public class Bebida {
         this.nome = nome;
     }
 
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 

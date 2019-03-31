@@ -21,6 +21,8 @@ import persistencia.PTurbidez;
 public class Cafe {
 
     private int id;
+    private String nome;
+    private double preco;
     private String popularidade;
 
     private int corId;
@@ -64,6 +66,8 @@ public class Cafe {
 
     public Cafe() throws SQLException {
         this.id = 0;
+        this.nome = "";
+        this.preco = 0;
         this.popularidade = "";
         this.corId = 0;
         this.oleosidadeId = 0;
@@ -100,11 +104,13 @@ public class Cafe {
                 this.gostoAcidoId);
     }
 
-    public Cafe(int id, String popularidade, int corId, int oleosidadeId, int turbidezId, int graoVerdeId,
+    public Cafe(int id, String nome, double preco, String popularidade, int corId, int oleosidadeId, int turbidezId, int graoVerdeId,
             int aromaDoceId, int caramelizadoId, int amendoaId, int aromaFermentadoId, int aromaQueimadoId,
             int saborFermentadoId, int adstringenteId, int saborQueimadoId, int gostoAmargoId, int saborDoceId,
             int gostoAcidoId) throws SQLException {
         this.id = id;
+        this.nome = nome;
+        this.preco = preco;
         this.popularidade = popularidade;
         this.corId = corId;
         this.oleosidadeId = oleosidadeId;
@@ -129,6 +135,22 @@ public class Cafe {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public String getPopularidade() {

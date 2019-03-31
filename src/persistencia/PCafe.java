@@ -22,29 +22,31 @@ public class PCafe {
     }
 
     public void incluir(Cafe parametro) throws SQLException {
-        String sql = "INSERT INTO Cafe(Popularidade, CorId, OleosidadeId, TurbidezId, GraoVerdeId, "
+        String sql = "INSERT INTO Cafe(Nome, Preco, Popularidade, CorId, OleosidadeId, TurbidezId, GraoVerdeId, "
                 + "AromaDoceId, CaramelizadoId, AmendoaId, AromaFermentadoId, AromaQueimadoId, "
                 + "SaborFermentoId, AdstringenteId, SaborQueimadoId, GostoAmargoId, SaborDoceId, "
                 + "GostoAcidoId)"
                 + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
-        prd.setString(1, parametro.getPopularidade());
-        prd.setInt(2, parametro.getCorId());
-        prd.setInt(3, parametro.getOleosidadeId());
-        prd.setInt(4, parametro.getTurbidezId());
-        prd.setInt(5, parametro.getGraoVerdeId());
-        prd.setInt(6, parametro.getAromaDoceId());
-        prd.setInt(7, parametro.getCaramelizadoId());
-        prd.setInt(8, parametro.getAmendoaId());
-        prd.setInt(9, parametro.getAromaFermentadoId());
-        prd.setInt(10, parametro.getAromaQueimadoId());
-        prd.setInt(11, parametro.getSaborFermentadoId());
-        prd.setInt(12, parametro.getAdstringenteId());
-        prd.setInt(13, parametro.getSaborQueimadoId());
-        prd.setInt(14, parametro.getSaborDoceId());
-        prd.setInt(15, parametro.getGostoAmargoId());
-        prd.setInt(16, parametro.getGostoAcidoId());
+        prd.setString(1, parametro.getNome());
+        prd.setDouble(2, parametro.getPreco());
+        prd.setString(3, parametro.getPopularidade());
+        prd.setInt(4, parametro.getCorId());
+        prd.setInt(5, parametro.getOleosidadeId());
+        prd.setInt(6, parametro.getTurbidezId());
+        prd.setInt(7, parametro.getGraoVerdeId());
+        prd.setInt(8, parametro.getAromaDoceId());
+        prd.setInt(9, parametro.getCaramelizadoId());
+        prd.setInt(10, parametro.getAmendoaId());
+        prd.setInt(11, parametro.getAromaFermentadoId());
+        prd.setInt(12, parametro.getAromaQueimadoId());
+        prd.setInt(13, parametro.getSaborFermentadoId());
+        prd.setInt(14, parametro.getAdstringenteId());
+        prd.setInt(15, parametro.getSaborQueimadoId());
+        prd.setInt(16, parametro.getSaborDoceId());
+        prd.setInt(17, parametro.getGostoAmargoId());
+        prd.setInt(18, parametro.getGostoAcidoId());
 
         prd.execute();
         cnn.close();
@@ -53,6 +55,8 @@ public class PCafe {
     public void alterar(Cafe parametro) throws SQLException {
         String sql = "UPDATE Cafe"
                 + " SET "
+                + " Nome = ?,"
+                + " Preco = ?,"
                 + " Popularidade = ?,"
                 + " CorId = ?,"
                 + " OleosidadeId = ?,"
@@ -72,23 +76,25 @@ public class PCafe {
                 + " WHERE id = ?";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
-        prd.setString(1, parametro.getPopularidade());
-        prd.setInt(2, parametro.getCorId());
-        prd.setInt(3, parametro.getOleosidadeId());
-        prd.setInt(4, parametro.getTurbidezId());
-        prd.setInt(5, parametro.getGraoVerdeId());
-        prd.setInt(6, parametro.getAromaDoceId());
-        prd.setInt(7, parametro.getCaramelizadoId());
-        prd.setInt(8, parametro.getAmendoaId());
-        prd.setInt(9, parametro.getAromaFermentadoId());
-        prd.setInt(10, parametro.getAromaQueimadoId());
-        prd.setInt(11, parametro.getSaborFermentadoId());
-        prd.setInt(12, parametro.getAdstringenteId());
-        prd.setInt(13, parametro.getSaborQueimadoId());
-        prd.setInt(14, parametro.getSaborDoceId());
-        prd.setInt(15, parametro.getGostoAmargoId());
-        prd.setInt(16, parametro.getGostoAcidoId());
-        prd.setInt(17, parametro.getId());
+                prd.setString(1, parametro.getNome());
+        prd.setDouble(2, parametro.getPreco());
+        prd.setString(3, parametro.getPopularidade());
+        prd.setInt(4, parametro.getCorId());
+        prd.setInt(5, parametro.getOleosidadeId());
+        prd.setInt(6, parametro.getTurbidezId());
+        prd.setInt(7, parametro.getGraoVerdeId());
+        prd.setInt(8, parametro.getAromaDoceId());
+        prd.setInt(9, parametro.getCaramelizadoId());
+        prd.setInt(10, parametro.getAmendoaId());
+        prd.setInt(11, parametro.getAromaFermentadoId());
+        prd.setInt(12, parametro.getAromaQueimadoId());
+        prd.setInt(13, parametro.getSaborFermentadoId());
+        prd.setInt(14, parametro.getAdstringenteId());
+        prd.setInt(15, parametro.getSaborQueimadoId());
+        prd.setInt(16, parametro.getSaborDoceId());
+        prd.setInt(17, parametro.getGostoAmargoId());
+        prd.setInt(18, parametro.getGostoAcidoId());
+        prd.setInt(19, parametro.getId());
 
         prd.execute();
         cnn.close();
@@ -117,7 +123,9 @@ public class PCafe {
 
         Cafe cafe = new Cafe();
         if (rs.next()) {
-            cafe.setId(rs.getInt("Id"));
+            cafe.setId(rs.getInt("Id")); 
+            cafe.setNome(rs.getString("Nome"));
+            cafe.setPreco(rs.getDouble("Preco"));
             cafe.setPopularidade(rs.getString("Popularidade"));
             cafe.setCorId(rs.getInt("corId"));
             cafe.setOleosidadeId(rs.getInt("oleosidadeId"));
@@ -153,7 +161,9 @@ public class PCafe {
 
         while (rs.next()) {
             Cafe cafe = new Cafe();
-            cafe.setId(rs.getInt("Id"));
+            cafe.setId(rs.getInt("Id")); 
+            cafe.setNome(rs.getString("Nome"));
+            cafe.setPreco(rs.getDouble("Preco"));
             cafe.setPopularidade(rs.getString("Popularidade"));
             cafe.setCorId(rs.getInt("corId"));
             cafe.setOleosidadeId(rs.getInt("oleosidadeId"));

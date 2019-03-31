@@ -5,9 +5,34 @@
  */
 package apresentacao;
 
+import entidades.Adstringente;
+import entidades.Amendoa;
+import entidades.Cafe;
+import entidades.Caramelizado;
+import entidades.Cor;
+import entidades.Fermentado;
+import entidades.GostoAcido;
+import entidades.GostoAmargo;
+import entidades.GostoDoce;
+import entidades.GraoVerde;
+import entidades.Oleosidade;
+import entidades.Queimado;
+import entidades.Turbidez;
 import java.awt.Dimension;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import negocio.NAdstringente;
+import negocio.NAmendoa;
+import negocio.NCaramelizado;
+import negocio.NCor;
+import negocio.NFermentado;
+import negocio.NGostoAcido;
+import negocio.NGostoAmargo;
+import negocio.NGostoDoce;
+import negocio.NGraoVerde;
+import negocio.NOleosidade;
+import negocio.NQueimado;
+import negocio.NTurbidez;
 
 
 /**
@@ -22,12 +47,19 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
      */
     public FrmCadCafe() {
         initComponents();
-        btn_Pesquisar.setContentAreaFilled(false);
+        carregarComboBox();
     }
 
     public FrmCadCafe(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
+        carregarComboBox();
+    }
+    
+    public FrmCadCafe(JDesktopPane parametro,Cafe cafe) {
+        this();
+        pnlPrincipal = parametro;
+        carregarComboBox();
     }
 
     public void setPosicao() {
@@ -406,6 +438,11 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
         jTabbedPane2.addTab("Sabor", jPanel_Sabor);
 
         btn_cadastrar.setText("Cadastrar");
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -428,6 +465,29 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+     try{
+        Cafe cafe = new Cafe();
+        cafe.setAdstringente((Adstringente) cbSabor_Adstringente.getSelectedItem());
+        cafe.setGostoAcido((GostoAcido) cbSabor_Acido.getSelectedItem());
+        cafe.setGostoAmargo((GostoAmargo) cbSabor_Amargo.getSelectedItem());
+        cafe.setSaborDoce((GostoDoce) cbSabor_Doce.getSelectedItem());
+        cafe.setSaborFermentado((Fermentado) cbSabor_Fermentado.getSelectedItem());
+        cafe.setSaborQueimado((Queimado) cbSabor_Queimado.getSelectedItem());
+        cafe.setCor((Cor) cbAparencia_Cor.getSelectedItem());
+        cafe.setOleosidade((Oleosidade) cbAparencia_Oleosidade.getSelectedItem());
+        cafe.setTurbidez((Turbidez) cbAparencia_Turbidez.getSelectedItem());
+        cafe.setAmendoa((Amendoa) cbAroma_Amendoa.getSelectedItem());
+        cafe.setCaramelizado((Caramelizado) cbAroma_Caramelizado.getSelectedItem());
+        cafe.setAromaDoce((GostoDoce) cbAroma_Doce.getSelectedItem());
+        cafe.setAromaFermentado((Fermentado) cbAroma_Fermentado.getSelectedItem());
+        cafe.setGraoVerde((GraoVerde) cbAroma_GraoVerde.getSelectedItem());
+        cafe.setAromaQueimado((Queimado) cbAroma_Queimado.getSelectedItem());
+     }catch(Exception e){
+         JOptionPane.showMessageDialog(null, e.getMessage());
+     }
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -477,6 +537,55 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txf_nome;
     private javax.swing.JFormattedTextField txf_preco;
     // End of variables declaration//GEN-END:variables
-
-   
+private void carregarComboBox() {
+        try {
+            for (Adstringente obj : new NAdstringente().listar()) {
+                cbSabor_Adstringente.addItem(obj);
+            }
+            for (GostoAcido obj : new NGostoAcido().listar()) {
+                cbSabor_Acido.addItem(obj);
+            }
+            for (GostoAmargo obj : new NGostoAmargo().listar()) {
+                cbSabor_Amargo.addItem(obj);
+            }
+            for (GostoDoce obj : new NGostoDoce().listar()) {
+                cbSabor_Doce.addItem(obj);
+            }
+            for (Fermentado obj : new NFermentado().listar()) {
+                cbSabor_Fermentado.addItem(obj);
+            }
+            for (Queimado obj : new NQueimado().listar()) {
+                cbSabor_Queimado.addItem(obj);
+            }
+            for (Cor obj : new NCor().listar()) {
+                cbAparencia_Cor.addItem(obj);
+            }
+            for (Oleosidade obj : new NOleosidade().listar()) {
+                cbAparencia_Oleosidade.addItem(obj);
+            }
+            for (Turbidez obj : new NTurbidez().listar()) {
+                cbAparencia_Turbidez.addItem(obj);
+            }
+            for (Amendoa obj : new NAmendoa().listar()) {
+                cbAroma_Amendoa.addItem(obj);
+            }
+            for (Caramelizado obj : new NCaramelizado().listar()) {
+                cbAroma_Caramelizado.addItem(obj);
+            }
+            for (GostoDoce obj : new NGostoDoce().listar()) {
+                cbAroma_Doce.addItem(obj);
+            }
+            for (Fermentado obj : new NFermentado().listar()) {
+                cbAroma_Fermentado.addItem(obj);
+            }
+            for (GraoVerde obj : new NGraoVerde().listar()) {
+                cbAroma_GraoVerde.addItem(obj);
+            }
+            for (Queimado obj : new NQueimado().listar()) {
+                cbAroma_Queimado.addItem(obj);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+}
 }
