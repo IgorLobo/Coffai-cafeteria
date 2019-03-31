@@ -17,7 +17,7 @@ public class NGostoAmargo {
 
     public void salvar(GostoAmargo parametro) throws Exception {
 
-        if (parametro.getGostoAmargo().equals("")) {
+        if (parametro.getIntensidade().equals("")) {
             throw new Exception("É necessário preencher a intensidade");
         }
         if (parametro.getQuantidade() < 1) {
