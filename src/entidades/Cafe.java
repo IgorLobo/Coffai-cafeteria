@@ -1,5 +1,19 @@
 package entidades;
 
+import java.sql.SQLException;
+import persistencia.PAdstringente;
+import persistencia.PAmendoa;
+import persistencia.PCaramelizado;
+import persistencia.PCor;
+import persistencia.PFermentado;
+import persistencia.PGostoAcido;
+import persistencia.PGostoAmargo;
+import persistencia.PGostoDoce;
+import persistencia.PGraoVerde;
+import persistencia.POleosidade;
+import persistencia.PQueimado;
+import persistencia.PTurbidez;
+
 /**
  *
  * @author Hygor
@@ -8,6 +22,24 @@ public class Cafe {
 
     private int id;
     private String popularidade;
+
+    private int corId;
+    private int oleosidadeId;
+    private int turbidezId;
+
+    private int graoVerdeId;
+    private int aromaDoceId;
+    private int caramelizadoId;
+    private int amendoaId;
+    private int aromaFermentadoId;
+    private int aromaQueimadoId;
+
+    private int saborFermentadoId;
+    private int adstringenteId;
+    private int saborQueimadoId;
+    private int gostoAmargoId;
+    private int saborDoceId;
+    private int gostoAcidoId;
 
     //APARENCIA
     private Cor cor;
@@ -30,9 +62,24 @@ public class Cafe {
     private GostoDoce saborDoce;
     private GostoAcido gostoAcido;
 
-    public Cafe() {
+    public Cafe() throws SQLException {
         this.id = 0;
         this.popularidade = "";
+        this.corId = 0;
+        this.oleosidadeId = 0;
+        this.turbidezId = 0;
+        this.graoVerdeId = 0;
+        this.aromaDoceId = 0;
+        this.caramelizadoId = 0;
+        this.amendoaId = 0;
+        this.aromaFermentadoId = 0;
+        this.aromaQueimadoId = 0;
+        this.saborFermentadoId = 0;
+        this.adstringenteId = 0;
+        this.saborQueimadoId = 0;
+        this.gostoAmargoId = 0;
+        this.saborDoceId = 0;
+        this.gostoAcidoId = 0;
         this.cor = null;
         this.oleosidade = null;
         this.turbidez = null;
@@ -48,26 +95,32 @@ public class Cafe {
         this.gostoAmargo = null;
         this.saborDoce = null;
         this.gostoAcido = null;
+        obterItensDoCafe(this.corId, this.oleosidadeId, this.turbidezId, this.graoVerdeId, this.aromaDoceId, this.caramelizadoId, this.amendoaId, this.aromaFermentadoId, this.aromaQueimadoId,
+                this.saborFermentadoId, this.adstringenteId, this.saborQueimadoId, this.gostoAmargoId, this.saborDoceId,
+                this.gostoAcidoId);
     }
 
-    public Cafe(int id, String popularidade, Cor cor, Oleosidade oleosidade, Turbidez turbidez, GraoVerde graoVerde, GostoDoce aromaDoce, Caramelizado caramelizado, Amendoa amendoa, Fermentado aromaFermentado, Queimado aromaQueimado, Fermentado saborFermentado, Adstringente adstringente, Queimado saborQueimado, GostoAmargo gostoAmargo, GostoDoce saborDoce, GostoAcido gostoAcido) {
+    public Cafe(int id, String popularidade, int corId, int oleosidadeId, int turbidezId, int graoVerdeId,
+            int aromaDoceId, int caramelizadoId, int amendoaId, int aromaFermentadoId, int aromaQueimadoId,
+            int saborFermentadoId, int adstringenteId, int saborQueimadoId, int gostoAmargoId, int saborDoceId,
+            int gostoAcidoId) throws SQLException {
         this.id = id;
         this.popularidade = popularidade;
-        this.cor = cor;
-        this.oleosidade = oleosidade;
-        this.turbidez = turbidez;
-        this.graoVerde = graoVerde;
-        this.aromaDoce = aromaDoce;
-        this.caramelizado = caramelizado;
-        this.amendoa = amendoa;
-        this.aromaFermentado = aromaFermentado;
-        this.aromaQueimado = aromaQueimado;
-        this.saborFermentado = saborFermentado;
-        this.adstringente = adstringente;
-        this.saborQueimado = saborQueimado;
-        this.gostoAmargo = gostoAmargo;
-        this.saborDoce = saborDoce;
-        this.gostoAcido = gostoAcido;
+        this.corId = corId;
+        this.oleosidadeId = oleosidadeId;
+        this.turbidezId = turbidezId;
+        this.graoVerdeId = graoVerdeId;
+        this.aromaDoceId = aromaDoceId;
+        this.caramelizadoId = caramelizadoId;
+        this.amendoaId = amendoaId;
+        this.aromaFermentadoId = aromaFermentadoId;
+        this.aromaQueimadoId = aromaQueimadoId;
+        this.saborFermentadoId = saborFermentadoId;
+        this.adstringenteId = adstringenteId;
+        this.saborQueimadoId = saborQueimadoId;
+        this.gostoAmargoId = gostoAmargoId;
+        this.saborDoceId = saborDoceId;
+        this.gostoAcidoId = gostoAcidoId;
     }
 
     public int getId() {
@@ -206,4 +259,166 @@ public class Cafe {
         this.gostoAcido = gostoAcido;
     }
 
+    public int getCorId() {
+        return corId;
+    }
+
+    public void setCorId(int corId) {
+        this.corId = corId;
+    }
+
+    public int getOleosidadeId() {
+        return oleosidadeId;
+    }
+
+    public void setOleosidadeId(int oleosidadeId) {
+        this.oleosidadeId = oleosidadeId;
+    }
+
+    public int getTurbidezId() {
+        return turbidezId;
+    }
+
+    public void setTurbidezId(int turbidezId) {
+        this.turbidezId = turbidezId;
+    }
+
+    public int getGraoVerdeId() {
+        return graoVerdeId;
+    }
+
+    public void setGraoVerdeId(int graoVerdeId) {
+        this.graoVerdeId = graoVerdeId;
+    }
+
+    public int getAromaDoceId() {
+        return aromaDoceId;
+    }
+
+    public void setAromaDoceId(int aromaDoceId) {
+        this.aromaDoceId = aromaDoceId;
+    }
+
+    public int getCaramelizadoId() {
+        return caramelizadoId;
+    }
+
+    public void setCaramelizadoId(int caramelizadoId) {
+        this.caramelizadoId = caramelizadoId;
+    }
+
+    public int getAmendoaId() {
+        return amendoaId;
+    }
+
+    public void setAmendoaId(int amendoaId) {
+        this.amendoaId = amendoaId;
+    }
+
+    public int getAromaFermentadoId() {
+        return aromaFermentadoId;
+    }
+
+    public void setAromaFermentadoId(int aromaFermentadoId) {
+        this.aromaFermentadoId = aromaFermentadoId;
+    }
+
+    public int getAromaQueimadoId() {
+        return aromaQueimadoId;
+    }
+
+    public void setAromaQueimadoId(int aromaQueimadoId) {
+        this.aromaQueimadoId = aromaQueimadoId;
+    }
+
+    public int getSaborFermentadoId() {
+        return saborFermentadoId;
+    }
+
+    public void setSaborFermentadoId(int saborFermentadoId) {
+        this.saborFermentadoId = saborFermentadoId;
+    }
+
+    public int getAdstringenteId() {
+        return adstringenteId;
+    }
+
+    public void setAdstringenteId(int adstringenteId) {
+        this.adstringenteId = adstringenteId;
+    }
+
+    public int getSaborQueimadoId() {
+        return saborQueimadoId;
+    }
+
+    public void setSaborQueimadoId(int saborQueimadoId) {
+        this.saborQueimadoId = saborQueimadoId;
+    }
+
+    public int getGostoAmargoId() {
+        return gostoAmargoId;
+    }
+
+    public void setGostoAmargoId(int gostoAmargoId) {
+        this.gostoAmargoId = gostoAmargoId;
+    }
+
+    public int getSaborDoceId() {
+        return saborDoceId;
+    }
+
+    public void setSaborDoceId(int saborDoceId) {
+        this.saborDoceId = saborDoceId;
+    }
+
+    public int getGostoAcidoId() {
+        return gostoAcidoId;
+    }
+
+    public void setGostoAcidoId(int gostoAcidoId) {
+        this.gostoAcidoId = gostoAcidoId;
+    }
+
+    public void obterItensCafe() throws SQLException {
+        this.cor = new PCor().consultar(this.corId);
+        this.oleosidade = new POleosidade().consultar(this.oleosidadeId);
+        this.turbidez = new PTurbidez().consultar(this.turbidezId);
+
+        this.graoVerde = new PGraoVerde().consultar(this.graoVerdeId);
+        this.aromaDoce = new PGostoDoce().consultar(this.aromaDoceId);
+        this.caramelizado = new PCaramelizado().consultar(this.caramelizadoId);
+        this.amendoa = new PAmendoa().consultar(this.amendoaId);
+        this.aromaFermentado = new PFermentado().consultar(this.aromaFermentadoId);
+        this.aromaQueimado = new PQueimado().consultar(this.aromaQueimadoId);
+
+        this.saborFermentado = new PFermentado().consultar(this.saborFermentadoId);
+        this.adstringente = new PAdstringente().consultar(this.adstringenteId);
+        this.saborQueimado = new PQueimado().consultar(this.saborQueimadoId);
+        this.gostoAmargo = new PGostoAmargo().consultar(this.gostoAmargoId);
+        this.saborDoce = new PGostoDoce().consultar(this.saborDoceId);
+        this.gostoAcido = new PGostoAcido().consultar(this.gostoAcidoId);
+    }
+
+    private void obterItensDoCafe(int corId, int oleosidadeId, int turbidezId, int graoVerdeId, int aromaDoceId,
+            int caramelizadoId, int amendoaId, int aromaFermentadoId, int aromaQueimadoId, int saborFermentadoId,
+            int adstringenteId, int saborQueimadoId, int gostoAmargoId, int saborDoceId, int gostoAcidoId) throws SQLException {
+
+        this.cor = new PCor().consultar(corId);
+        this.oleosidade = new POleosidade().consultar(oleosidadeId);
+        this.turbidez = new PTurbidez().consultar(turbidezId);
+
+        this.graoVerde = new PGraoVerde().consultar(graoVerdeId);
+        this.aromaDoce = new PGostoDoce().consultar(aromaDoceId);
+        this.caramelizado = new PCaramelizado().consultar(caramelizadoId);
+        this.amendoa = new PAmendoa().consultar(amendoaId);
+        this.aromaFermentado = new PFermentado().consultar(aromaFermentadoId);
+        this.aromaQueimado = new PQueimado().consultar(aromaQueimadoId);
+
+        this.saborFermentado = new PFermentado().consultar(saborFermentadoId);
+        this.adstringente = new PAdstringente().consultar(adstringenteId);
+        this.saborQueimado = new PQueimado().consultar(saborQueimadoId);
+        this.gostoAmargo = new PGostoAmargo().consultar(gostoAmargoId);
+        this.saborDoce = new PGostoDoce().consultar(saborDoceId);
+        this.gostoAcido = new PGostoAcido().consultar(gostoAcidoId);
+    }
 }
