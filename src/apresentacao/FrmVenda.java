@@ -7,14 +7,15 @@ package apresentacao;
 
 import entidades.Cafe;
 import entidades.Cliente;
+import entidades.Venda;
 import java.awt.Dimension;
 import java.util.ArrayList;
-import java.util.Vector;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import negocio.NCafe;
 import negocio.NCliente;
+import negocio.NVenda;
 
 /**
  *
@@ -51,7 +52,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
         txf_Total = new javax.swing.JTextField();
         btn_Adicionar = new javax.swing.JButton();
         btn_Remover = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_finalizar = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Registro de venda");
@@ -119,7 +120,12 @@ public class FrmVenda extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Finalizar");
+        btn_finalizar.setText("Finalizar");
+        btn_finalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_finalizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +146,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_Remover))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btn_finalizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -165,7 +171,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txf_Total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btn_finalizar))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -186,17 +192,36 @@ public class FrmVenda extends javax.swing.JInternalFrame {
         if (tblCafe1.getSelectedRow() != -1) {
             removerCafeDaLista(tblCafe1.getSelectedRow());
             model.removeRow(tblCafe1.getSelectedRow());
-        }else {
+        } else {
             JOptionPane.showMessageDialog(null, "Selecione um item para remover da lista!", "Atenção", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btn_RemoverActionPerformed
+
+    private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
+        if (cliente == null) {
+            JDialogRequisitarCliente telaCliente = new JDialogRequisitarCliente(this, true);
+            telaCliente.setVisible(true);
+        } else if (listCafe.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Adicione itens á lista");
+        } else {
+            try {
+                Venda venda = new Venda();
+                venda.setListaCafe(listCafe);
+                venda.setCliente(cliente.getId());
+                new NVenda().salvar(venda);
+                this.dispose();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btn_finalizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Adicionar;
     private javax.swing.JButton btn_Remover;
     private javax.swing.JButton btn_cliente;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_finalizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -217,12 +242,12 @@ public class FrmVenda extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    
-    public void adicionarCliente(int id){
-        try{
+
+    public void adicionarCliente(int id) {
+        try {
             cliente = new NCliente().consultar(id);
             txf_nomeCliente.setText(cliente.getNome());
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
@@ -230,21 +255,6 @@ public class FrmVenda extends javax.swing.JInternalFrame {
     public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
-    }
-
-    private void recarregarTabela() {
-        try {
-            double soma = 0;
-            for (Cafe cafe : listCafe) {
-                Object[] linha = {cafe.getId(), cafe.getNome(), cafe.getPreco()};
-                soma += cafe.getPreco();
-                model.addRow(linha);
-            }
-            txf_Total.setText(Double.toString(soma));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-
     }
 
     private void removerCafeDaLista(int selectedRow) {
