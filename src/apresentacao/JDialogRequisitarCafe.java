@@ -91,7 +91,7 @@ public class JDialogRequisitarCafe extends javax.swing.JDialog {
             int indice = tblCafe.getSelectedRow();
             String id = tblCafe.getValueAt(indice, 0).toString();
             telaPai.adicionarCafe(Integer.parseInt(id));
-            this.dispose();
+            this.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }

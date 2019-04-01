@@ -28,6 +28,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
     Cliente cliente;
     double precoTotal = 0;
     DefaultTableModel model;
+    JDialogRequisitarCafe telaCafe;
 
     public FrmVenda() {
         initComponents();
@@ -37,6 +38,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
         initComponents();
         pnlPrincipal = parametro;
         model = (DefaultTableModel) tblCafe1.getModel();
+        telaCafe = new JDialogRequisitarCafe(this, true);
     }
 
     @SuppressWarnings("unchecked")
@@ -179,7 +181,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_AdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdicionarActionPerformed
-        JDialogRequisitarCafe telaCafe = new JDialogRequisitarCafe(this, true);
+        
         telaCafe.setVisible(true);
     }//GEN-LAST:event_btn_AdicionarActionPerformed
 
