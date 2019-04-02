@@ -233,6 +233,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
          try {
             Cor selecionado = (Cor) cbAparencia_Cor.getSelectedItem();
             new NCor().excluir(selecionado.getId());
+            cbAparencia_Cor.removeItemAt(cbAparencia_Cor.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -242,6 +243,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         try {
             Oleosidade selecionado = (Oleosidade) cbAparencia_Oleosidade.getSelectedItem();
             new NOleosidade().excluir(selecionado.getId());
+            cbAparencia_Oleosidade.removeItemAt(cbAparencia_Oleosidade.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -251,6 +253,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
         try {
             Turbidez selecionado = (Turbidez) cbAparencia_Turbidez.getSelectedItem();
             new NTurbidez().excluir(selecionado.getId());
+            cbAparencia_Turbidez.removeItemAt(cbAparencia_Turbidez.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -261,6 +264,10 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
             Cor cor = new Cor();
             cor.setCor(capturarCor("Cor"));
             new NCor().salvar(cor);
+            cbAparencia_Cor.removeAllItems();
+            for (Cor c : new NCor().listar()) {
+                cbAparencia_Cor.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -271,6 +278,10 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
             Oleosidade oleosidade = new Oleosidade();
             oleosidade.setQuantidade(capturarPorcentagem("Oleosidade"));
             new NOleosidade().salvar(oleosidade);
+            cbAparencia_Cor.removeAllItems();
+            for (Oleosidade c : new NOleosidade().listar()) {
+                cbAparencia_Oleosidade.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -281,6 +292,10 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
             Turbidez turbidez = new Turbidez();
             turbidez.setQuantidade(capturarPorcentagem("Oleosidade"));
             new NTurbidez().Salvar(turbidez);
+            cbAparencia_Turbidez.removeAllItems();
+            for (Turbidez c : new NTurbidez().listar()) {
+                cbAparencia_Turbidez.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
