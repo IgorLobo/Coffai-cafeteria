@@ -16,8 +16,11 @@ public class NCafe {
     }
 
     public void salvar(Cafe parametro) throws Exception {
-
-        per.incluir(parametro);
+        if(parametro.getId() == 0 ){
+            per.incluir(parametro);
+        }else{
+            per.alterar(parametro);
+        }
     }
     
     public void excluir(int id) throws Exception{
