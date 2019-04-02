@@ -1,6 +1,8 @@
 package apresentacao;
 
 import entidades.Cliente;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import negocio.NCliente;
@@ -147,10 +149,16 @@ public class JDialogRequisitarCliente extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 private void carregarTabela() {
         try {
-            DefaultTableModel model  = (DefaultTableModel)tblCliente.getModel();
-            for (Cliente cliente : new NCliente().listar()) {
-                Object[] linha = {cliente.getId(), cliente.getNome(), cliente.getCpf(), cliente.getEmail()};
-                model.addRow(linha);
+            List<Cliente> lista = new NCliente().listar();
+            if (lista == null) {
+                JOptionPane.showMessageDialog(null, "Não há clientes cadastrados!");
+            } else {
+                DefaultTableModel model = (DefaultTableModel) tblCliente.getModel();
+
+                for (Cliente cliente : lista) {
+                    Object[] linha = {cliente.getId(), cliente.getNome(), cliente.getCpf(), cliente.getEmail()};
+                    model.addRow(linha);
+                }
             }
 
         } catch (Exception e) {

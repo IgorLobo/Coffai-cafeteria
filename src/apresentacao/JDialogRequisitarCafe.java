@@ -1,6 +1,7 @@
 package apresentacao;
 
 import entidades.Cafe;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import negocio.NCafe;
@@ -145,13 +146,17 @@ public class JDialogRequisitarCafe extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 private void carregarTabela() {
         try {
+            List<Cafe> lista = new NCafe().listar();
+            if (lista == null) {
+                JOptionPane.showMessageDialog(null, "Não há Café cadastrado!");
+            } else {
             DefaultTableModel model = (DefaultTableModel) tblCafe.getModel();
 
-            for (Cafe cafe : new NCafe().listar()) {
+            for (Cafe cafe : lista) {
                 Object[] linha = {cafe.getId(), cafe.getNome(), cafe.getPreco()};
                 model.addRow(linha);
             }
-
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }

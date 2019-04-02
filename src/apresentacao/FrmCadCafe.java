@@ -54,12 +54,14 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
         this();
         pnlPrincipal = parametro;
         carregarComboBox();
+        btn_Pesquisar.setContentAreaFilled(false);
     }
     
     public FrmCadCafe(JDesktopPane parametro,Cafe cafe) {
         this();
         pnlPrincipal = parametro;
         carregarComboBox();
+        btn_Pesquisar.setContentAreaFilled(false);
     }
 
     public void setPosicao() {

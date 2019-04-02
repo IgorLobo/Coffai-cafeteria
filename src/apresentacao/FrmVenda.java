@@ -29,6 +29,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
     double precoTotal = 0;
     DefaultTableModel model;
     JDialogRequisitarCafe telaCafe;
+    JDialogRequisitarCliente telaCliente;
 
     public FrmVenda() {
         initComponents();
@@ -39,6 +40,8 @@ public class FrmVenda extends javax.swing.JInternalFrame {
         pnlPrincipal = parametro;
         model = (DefaultTableModel) tblCafe1.getModel();
         telaCafe = new JDialogRequisitarCafe(this, true);
+        telaCliente = new JDialogRequisitarCliente(this, true);
+        btn_cliente.setContentAreaFilled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -181,12 +184,10 @@ public class FrmVenda extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_AdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AdicionarActionPerformed
-        
         telaCafe.setVisible(true);
     }//GEN-LAST:event_btn_AdicionarActionPerformed
 
     private void btn_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clienteActionPerformed
-        JDialogRequisitarCliente telaCliente = new JDialogRequisitarCliente(this, true);
         telaCliente.setVisible(true);
     }//GEN-LAST:event_btn_clienteActionPerformed
 
@@ -201,7 +202,6 @@ public class FrmVenda extends javax.swing.JInternalFrame {
 
     private void btn_finalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizarActionPerformed
         if (cliente == null) {
-            JDialogRequisitarCliente telaCliente = new JDialogRequisitarCliente(this, true);
             telaCliente.setVisible(true);
         } else if (listCafe.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Adicione itens á lista");
