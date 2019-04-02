@@ -345,6 +345,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             GraoVerde selecionado = (GraoVerde) cbAroma_GraoVerde.getSelectedItem();
             new NGraoVerde().excluir(selecionado.getId());
+            cbAroma_GraoVerde.removeItemAt(cbAroma_GraoVerde.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -354,6 +355,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
            GostoDoce selecionado = (GostoDoce) cbAroma_Doce.getSelectedItem();
             new NGostoDoce().excluir(selecionado.getId());
+            cbAroma_Doce.removeItemAt(cbAroma_Doce.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -363,6 +365,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             Caramelizado selecionado = (Caramelizado) cbAroma_Caramelizado.getSelectedItem();
             new NCaramelizado().excluir(selecionado.getId());
+            cbAroma_Caramelizado.removeItemAt(cbAroma_Caramelizado.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -372,6 +375,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             Amendoa selecionado = (Amendoa) cbAroma_Amendoa.getSelectedItem();
             new NAmendoa().excluir(selecionado.getId());
+            cbAroma_Amendoa.removeItemAt(cbAroma_Amendoa.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -381,6 +385,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             Fermentado selecionado = (Fermentado) cbAroma_Fermentado.getSelectedItem();
             new NFermentado().excluir(selecionado.getId());
+            cbAroma_Fermentado.removeItemAt(cbAroma_Fermentado.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -390,6 +395,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             Queimado selecionado = (Queimado) cbAroma_Queimado.getSelectedItem();
             new NQueimado().excluir(selecionado.getId());
+            cbAroma_Queimado.removeItemAt(cbAroma_Queimado.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -401,6 +407,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             graoVerde.setAmostra(capturarAmostra("Grão Verde"));
             graoVerde.setQuantidade(capturarPorcentagem("Grão Verde"));
             new NGraoVerde().salvar(graoVerde);
+            cbAroma_GraoVerde.removeAllItems();
+            for (GraoVerde c : new NGraoVerde().listar()) {
+                cbAroma_GraoVerde.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -411,6 +421,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             GostoDoce gostoDoce = new GostoDoce();
             gostoDoce.setIntensidade(capturarIntensidade("Gosto Doce"));
             new NGostoDoce().salvar(gostoDoce);
+            cbAroma_Doce.removeAllItems();
+            for (GostoDoce c : new NGostoDoce().listar()) {
+                cbAroma_Doce.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -421,6 +435,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             Caramelizado caramelizado = new Caramelizado();
             caramelizado.setIntensidade(capturarPorcentagem("Caramelizado"));
             new NCaramelizado().salvar(caramelizado);
+            cbAroma_Caramelizado.removeAllItems();
+            for (Caramelizado c : new NCaramelizado().listar()) {
+                cbAroma_Caramelizado.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -431,6 +449,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             Amendoa amendoa = new Amendoa();
             amendoa.setIntensidade(capturarPorcentagem("Amendoa"));
             new NAmendoa().salvar(amendoa);
+            cbAroma_Amendoa.removeAllItems();
+            for (Amendoa c : new NAmendoa().listar()) {
+                cbAroma_Amendoa.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -441,6 +463,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             Fermentado fermantado = new Fermentado();
             fermantado.setIntensidade(capturarIntensidade("Fermentado"));
             new NFermentado().salvar(fermantado);
+            cbAroma_Fermentado.removeAllItems();
+            for (Fermentado c : new NFermentado().listar()) {
+                cbAroma_Fermentado.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -451,6 +477,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
             Queimado queimado = new Queimado();
             queimado.setIntensidade(capturarIntensidade("Queimado"));
             new NQueimado().Salvar(queimado);
+            cbAroma_Queimado.removeAllItems();
+            for (Queimado c : new NQueimado().listar()) {
+                cbAroma_Queimado.addItem(c);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }

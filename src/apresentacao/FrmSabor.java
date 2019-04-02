@@ -382,6 +382,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
     try {
             Adstringente selecionado = (Adstringente) cbSabor_Adstringente.getSelectedItem();
             new NAdstringente().excluir(selecionado.getId());
+            cbSabor_Adstringente.removeItemAt(cbSabor_Adstringente.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -391,6 +392,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         try {
             Fermentado selecionado = (Fermentado) cbSabor_Fermentado.getSelectedItem();
             new NFermentado().excluir(selecionado.getId());
+            cbSabor_Fermentado.removeItemAt(cbSabor_Fermentado.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -413,6 +415,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         try {
             Queimado selecionado = (Queimado) cbSabor_Queimado.getSelectedItem();
             new NQueimado().excluir(selecionado.getId());
+            cbSabor_Queimado.removeItemAt(cbSabor_Queimado.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -422,6 +425,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         try {
             GostoAmargo selecionado = (GostoAmargo) cbSabor_Amargo.getSelectedItem();
             new NGostoAmargo().excluir(selecionado.getId());
+            cbSabor_Amargo.removeItemAt(cbSabor_Amargo.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -431,6 +435,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         try {
             GostoDoce selecionado = (GostoDoce) cbSabor_Doce.getSelectedItem();
             new NGostoDoce().excluir(selecionado.getId());
+            cbSabor_Doce.removeItemAt(cbSabor_Doce.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -440,6 +445,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
         try {
             GostoAcido selecionado = (GostoAcido) cbSabor_Acido.getSelectedItem();
             new NGostoAcido().excluir(selecionado.getId());
+            cbSabor_Acido.removeItemAt(cbSabor_Acido.getSelectedIndex());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
