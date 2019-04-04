@@ -21,7 +21,7 @@ public class Cliente {
     private String bairro;
     private String cidade;
     private String telefone;
-
+    
     public Cliente() {
         this.id = 0;
         this.nome = "";
@@ -38,12 +38,12 @@ public class Cliente {
         this.telefone = "";
     }
 
-    public Cliente(int id, String nome, String cpf, String email, Long dataNascimento, String logradouro, String quadra, String lote, String numero, String cep, String bairro, String cidade, String telefone) {
+    public Cliente(int id, String nome, String cpf, String email, Date dataNascimento, String logradouro, String quadra, String lote, String numero, String cep, String bairro, String cidade, String telefone) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-        this.dataNascimento = new Date(dataNascimento);
+        this.dataNascimento = dataNascimento;
         this.logradouro = logradouro;
         this.quadra = quadra;
         this.lote = lote;
