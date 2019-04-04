@@ -14,6 +14,9 @@ import entidades.Oleosidade;
 import entidades.Queimado;
 import entidades.Turbidez;
 import java.awt.Dimension;
+import java.util.List;
+import javafx.scene.control.ComboBox;
+import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import negocio.NAdstringente;
@@ -38,6 +41,20 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
     JDesktopPane pnlPrincipal;
     Cafe auxCafe;
+    JDialogEditarCafe telaListaCafe;
+//LISTAS DOS COMPONENTES DE CAFÉ CARREGADOS PELO BANCO
+    List<Adstringente> listaAdstringente;
+    List<Amendoa> listAmendoa;
+    List<Caramelizado> listCaramelizado;
+    List<Cor> listCor;
+    List<Fermentado> listFermentado;
+    List<GostoAcido> listAcido;
+    List<GostoAmargo> listAmargo;
+    List<GostoDoce> listDoce;
+    List<GraoVerde> listGraoVerde;
+    List<Oleosidade> listOleosidade;
+    List<Queimado> listQueimado;
+    List<Turbidez> listTurbidez;
 
     public FrmCadCafe() {
         initComponents();
@@ -127,7 +144,7 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
         cb_Caracteristico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pouco", "Muito" }));
 
-        txf_preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
+        txf_preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("ID:");
@@ -463,30 +480,41 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
         try {
-                Cafe cafe = new Cafe();
-                cafe.setAdstringente((Adstringente) cbSabor_Adstringente.getSelectedItem());
-                cafe.setGostoAcido((GostoAcido) cbSabor_Acido.getSelectedItem());
-                cafe.setGostoAmargo((GostoAmargo) cbSabor_Amargo.getSelectedItem());
-                cafe.setSaborDoce((GostoDoce) cbSabor_Doce.getSelectedItem());
-                cafe.setSaborFermentado((Fermentado) cbSabor_Fermentado.getSelectedItem());
-                cafe.setSaborQueimado((Queimado) cbSabor_Queimado.getSelectedItem());
-                cafe.setCor((Cor) cbAparencia_Cor.getSelectedItem());
-                cafe.setOleosidade((Oleosidade) cbAparencia_Oleosidade.getSelectedItem());
-                cafe.setTurbidez((Turbidez) cbAparencia_Turbidez.getSelectedItem());
-                cafe.setAmendoa((Amendoa) cbAroma_Amendoa.getSelectedItem());
-                cafe.setCaramelizado((Caramelizado) cbAroma_Caramelizado.getSelectedItem());
-                cafe.setAromaDoce((GostoDoce) cbAroma_Doce.getSelectedItem());
-                cafe.setAromaFermentado((Fermentado) cbAroma_Fermentado.getSelectedItem());
-                cafe.setGraoVerde((GraoVerde) cbAroma_GraoVerde.getSelectedItem());
-                cafe.setAromaQueimado((Queimado) cbAroma_Queimado.getSelectedItem());
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("botao acadastrar");
+            Cafe cafe = new Cafe();
+            cafe.setPopularidade(cb_Caracteristico.getSelectedItem().toString());
+            cafe.setNome(txf_nome.getText());
+            cafe.setPreco(Double.parseDouble(txf_preco.getText()));
+            cafe.setAdstringenteId(((Adstringente) cbSabor_Adstringente.getSelectedItem()).getId());
+            cafe.setGostoAcidoId(((GostoAcido) cbSabor_Acido.getSelectedItem()).getId());
+            cafe.setGostoAmargoId(((GostoAmargo) cbSabor_Amargo.getSelectedItem()).getId());
+            cafe.setSaborDoceId(((GostoDoce) cbSabor_Doce.getSelectedItem()).getId());
+            cafe.setSaborFermentadoId(((Fermentado) cbSabor_Fermentado.getSelectedItem()).getId());
+            cafe.setSaborQueimadoId(((Queimado) cbSabor_Queimado.getSelectedItem()).getId());
+            cafe.setCorId(((Cor) cbAparencia_Cor.getSelectedItem()).getId());
+            cafe.setOleosidadeId(((Oleosidade) cbAparencia_Oleosidade.getSelectedItem()).getId());
+            cafe.setTurbidezId(((Turbidez) cbAparencia_Turbidez.getSelectedItem()).getId());
+            cafe.setAmendoaId(((Amendoa) cbAroma_Amendoa.getSelectedItem()).getId());
+            cafe.setCaramelizadoId(((Caramelizado) cbAroma_Caramelizado.getSelectedItem()).getId());
+            cafe.setAromaDoceId(((GostoDoce) cbAroma_Doce.getSelectedItem()).getId());
+            cafe.setAromaFermentadoId(((Fermentado) cbAroma_Fermentado.getSelectedItem()).getId());
+            cafe.setGraoVerdeId(((GraoVerde) cbAroma_GraoVerde.getSelectedItem()).getId());
+            cafe.setAromaQueimadoId(((Queimado) cbAroma_Queimado.getSelectedItem()).getId());
+            if(!txf_ID.getText().isEmpty()){
+                cafe.setId(auxCafe.getId());
             }
-        
+            new NCafe().salvar(cafe);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
     }//GEN-LAST:event_btn_cadastrarActionPerformed
 
     private void btn_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PesquisarActionPerformed
-
+        if (telaListaCafe == null) {
+            telaListaCafe = new JDialogEditarCafe(this, true);
+        }
+        telaListaCafe.setVisible(true);
     }//GEN-LAST:event_btn_PesquisarActionPerformed
 
 
@@ -539,61 +567,109 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 private void carregarComboBox() {
         try {
-            for (Adstringente obj : new NAdstringente().listar()) {
+            listaAdstringente = new NAdstringente().listar();
+            listAcido = new NGostoAcido().listar();
+            listAmargo = new NGostoAmargo().listar();
+            listDoce = new NGostoDoce().listar();
+            listFermentado = new NFermentado().listar();
+            listQueimado = new NQueimado().listar();
+            listCor = new NCor().listar();
+            listOleosidade = new NOleosidade().listar();
+            listTurbidez = new NTurbidez().listar();
+            listAmendoa = new NAmendoa().listar();
+            listCaramelizado = new NCaramelizado().listar();
+            listDoce = new NGostoDoce().listar();
+            listFermentado = new NFermentado().listar();
+            listGraoVerde = new NGraoVerde().listar();
+            listQueimado = new NQueimado().listar();
+
+            for (Adstringente obj : listaAdstringente) {
                 cbSabor_Adstringente.addItem(obj);
             }
-            for (GostoAcido obj : new NGostoAcido().listar()) {
+            for (GostoAcido obj : listAcido) {
                 cbSabor_Acido.addItem(obj);
             }
-            for (GostoAmargo obj : new NGostoAmargo().listar()) {
+            for (GostoAmargo obj : listAmargo) {
                 cbSabor_Amargo.addItem(obj);
             }
-            for (GostoDoce obj : new NGostoDoce().listar()) {
+            for (GostoDoce obj : listDoce) {
                 cbSabor_Doce.addItem(obj);
             }
-            for (Fermentado obj : new NFermentado().listar()) {
+            for (Fermentado obj : listFermentado) {
                 cbSabor_Fermentado.addItem(obj);
             }
-            for (Queimado obj : new NQueimado().listar()) {
+            for (Queimado obj : listQueimado) {
                 cbSabor_Queimado.addItem(obj);
             }
-            for (Cor obj : new NCor().listar()) {
+            for (Cor obj : listCor) {
                 cbAparencia_Cor.addItem(obj);
             }
-            for (Oleosidade obj : new NOleosidade().listar()) {
+            for (Oleosidade obj : listOleosidade) {
                 cbAparencia_Oleosidade.addItem(obj);
             }
-            for (Turbidez obj : new NTurbidez().listar()) {
+            for (Turbidez obj : listTurbidez) {
                 cbAparencia_Turbidez.addItem(obj);
             }
-            for (Amendoa obj : new NAmendoa().listar()) {
+            for (Amendoa obj : listAmendoa) {
                 cbAroma_Amendoa.addItem(obj);
             }
-            for (Caramelizado obj : new NCaramelizado().listar()) {
+            for (Caramelizado obj : listCaramelizado) {
                 cbAroma_Caramelizado.addItem(obj);
             }
-            for (GostoDoce obj : new NGostoDoce().listar()) {
+            for (GostoDoce obj : listDoce) {
                 cbAroma_Doce.addItem(obj);
             }
-            for (Fermentado obj : new NFermentado().listar()) {
+            for (Fermentado obj : listFermentado) {
                 cbAroma_Fermentado.addItem(obj);
             }
-            for (GraoVerde obj : new NGraoVerde().listar()) {
+            for (GraoVerde obj : listGraoVerde) {
                 cbAroma_GraoVerde.addItem(obj);
             }
-            for (Queimado obj : new NQueimado().listar()) {
+            for (Queimado obj : listQueimado) {
                 cbAroma_Queimado.addItem(obj);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    public void adicionarCafe(int id){
-        try{
+
+    public void adicionarCafe(int id) {
+        try {
             auxCafe = new NCafe().consultar(id);
-            cbAparencia_Cor.setSelectedItem(jLabel1);
-        }catch(Exception e){
+            txf_ID.setText(Integer.toString(auxCafe.getId()));
+            txf_nome.setText(auxCafe.getNome());
+            txf_preco.setText(Double.toString(auxCafe.getPreco()));
+            selecionarItem(listCor, cbAparencia_Cor, auxCafe.getCor().toString());
+            selecionarItem(listOleosidade, cbAparencia_Oleosidade, auxCafe.getOleosidade().toString());
+            selecionarItem(listTurbidez, cbAparencia_Turbidez, auxCafe.getTurbidez().toString());
+            selecionarItem(listAmendoa, cbAroma_Amendoa, auxCafe.getAmendoa().toString());
+            selecionarItem(listCaramelizado, cbAroma_Caramelizado, auxCafe.getCaramelizado().toString());
+            selecionarItem(listDoce, cbAroma_Doce, auxCafe.getAromaDoce().toString());//atenção
+            selecionarItem(listFermentado, cbAroma_Fermentado, auxCafe.getAromaFermentado().toString());
+            selecionarItem(listGraoVerde, cbAroma_GraoVerde, auxCafe.getGraoVerde().toString());
+            selecionarItem(listQueimado, cbAroma_Queimado, auxCafe.getAromaQueimado().toString());
+            selecionarItem(listCor, cbSabor_Acido, auxCafe.getGostoAcido().toString());
+            selecionarItem(listCor, cbSabor_Adstringente, auxCafe.getAdstringente().toString());
+            selecionarItem(listCor, cbSabor_Amargo, auxCafe.getGostoAmargo().toString());
+            selecionarItem(listCor, cbSabor_Doce, auxCafe.getSaborDoce().toString());
+            selecionarItem(listCor, cbSabor_Fermentado, auxCafe.getSaborFermentado().toString());
+            selecionarItem(listCor, cbSabor_Queimado, auxCafe.getSaborFermentado().toString());
+            if (auxCafe.getPopularidade().equalsIgnoreCase("Pouco")) {
+                cb_Caracteristico.setSelectedIndex(0);
+            } else {
+                cb_Caracteristico.setSelectedIndex(1);
+            }
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+
+    private void selecionarItem(List lista, JComboBox cb, String toStringAlvo) {
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).toString().equalsIgnoreCase(toStringAlvo)) {
+                cb.setSelectedItem(lista.get(i));
+                return;
+            }
         }
     }
 }
