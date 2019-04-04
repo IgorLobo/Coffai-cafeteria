@@ -18,6 +18,8 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 import negocio.NCliente;
 import util.Mask;
+import static util.Mask.formatarData;
+import static util.Mask.converteData;
 
 public class FrmCadCliente extends javax.swing.JInternalFrame {
 
@@ -411,6 +413,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
 
         txtId.setText(cliente.getId() + "");
         txtNome.setText(cliente.getNome());
+        txtNascimeto.setText(converteData(cliente.getDataNascimento()));
         txtEndereco.setText(cliente.getLogradouro());
         txtCpf.setText(cliente.getCpf());
         txtNumero.setText(cliente.getNumero());
@@ -428,14 +431,6 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
     public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
-    }
-
-    public static Date formatarData(String parametro) throws ParseException {
-        DateFormat formatar = new SimpleDateFormat("dd/MM/yyyy");
-        if (!parametro.isEmpty()) {
-            return new java.sql.Date(formatar.parse(parametro).getTime());
-        }
-        return null;
     }
 
 }
