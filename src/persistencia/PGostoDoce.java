@@ -23,7 +23,7 @@ public class PGostoDoce {
 
     public void incluir(GostoDoce parametro) throws SQLException {
         String sql = "INSERT INTO gostodoce(quantidade, intensidade) "
-                + "VALUES (?)";
+                + "VALUES (?,?)";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
         prd.setDouble(1, parametro.getQuantidade());
