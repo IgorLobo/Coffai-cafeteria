@@ -52,14 +52,14 @@ public class FrmRelatorioCliente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "E-Mail"
+                "ID", "Nome", "CPF", "Telefone"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -140,7 +140,7 @@ private void carregarTabela() {
              model = (DefaultTableModel) tbl_clientes.getModel();
 
             for (Cliente cliente : lista) {
-                Object[] linha = {cliente.getId(), cliente.getNome(), cliente.getCpf(), cliente.getEmail()};
+                Object[] linha = {cliente.getId(), cliente.getNome(), cliente.getCpf(), cliente.getTelefone()};
                 model.addRow(linha);
             }
             }
