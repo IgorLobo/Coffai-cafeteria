@@ -27,8 +27,7 @@ import negocio.NQueimado;
  */
 public class FrmAroma extends javax.swing.JInternalFrame {
 
-    JDesktopPane pnlPrincipal
-            ;
+    JDesktopPane pnlPrincipal;
 
     /**
      * Creates new form FrmCadCliente

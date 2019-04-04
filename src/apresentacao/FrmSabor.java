@@ -39,6 +39,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
     public FrmSabor(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
+        carregarComboBox();
     }
 
     /**
