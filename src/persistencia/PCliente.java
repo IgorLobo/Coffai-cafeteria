@@ -120,7 +120,7 @@ public class PCliente {
         rs.close();
         cnn.close();
 
-        return null;
+        return cliente;
     }
 
     public List<Cliente> listar() throws SQLException {
