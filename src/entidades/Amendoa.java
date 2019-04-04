@@ -36,6 +36,6 @@ public class Amendoa {
     }
     
     public String toString() {
-        return String.format("%s", getIntensidade());
+        return String.format("%s %%", getIntensidade());
     }
 }

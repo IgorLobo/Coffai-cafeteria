@@ -36,6 +36,6 @@ public class Caramelizado {
     }
     
     public String toString() {
-        return String.format("%s", getIntensidade());
+        return String.format("%s %%", getIntensidade());
     }
 }
