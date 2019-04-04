@@ -24,9 +24,9 @@ public class PCafe {
     public void incluir(Cafe parametro) throws SQLException {
         String sql = "INSERT INTO cafe(nome, preco, popularidade, corid, oleosidadeid, turbidezid, graoverdeid, "
                 + "aromadoceid, caramelizadoid, amendoaid, aromafermentadoid, aromaqueimadoid, "
-                + "saborfermentoid, adstringenteid, saborqueimadoid, gostoamargoid, sabordoceid, "
+                + "saborfermentadoid, adstringenteid, saborqueimadoid, gostoamargoid, sabordoceid, "
                 + "gostoacidoid)"
-                + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+                + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         PreparedStatement prd = cnn.prepareStatement(sql);
         prd.setString(1, parametro.getNome());

@@ -43,6 +43,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnuCadSabor = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuVenda = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        menuRelatorioCliente = new javax.swing.JMenuItem();
+        menuRelatorioCafe = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         mnuSair = new javax.swing.JMenuItem();
 
@@ -127,6 +130,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu4.setText("Relatório");
+
+        menuRelatorioCliente.setText("Cliente");
+        menuRelatorioCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRelatorioClienteActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuRelatorioCliente);
+
+        menuRelatorioCafe.setText("Cafe");
+        menuRelatorioCafe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRelatorioCafeActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuRelatorioCafe);
+
+        jMenuBar1.add(jMenu4);
+
         jMenu3.setText("Sair");
 
         mnuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
@@ -202,9 +225,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuCadAparenciaActionPerformed
 
     private void mnuCadAromaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadAromaActionPerformed
-       try {
+        try {
 
-        FrmAroma frm = new FrmAroma(this.pnlPrincipal);
+            FrmAroma frm = new FrmAroma(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
             frm.setPosicao();
@@ -214,9 +237,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuCadAromaActionPerformed
 
     private void mnuCadSaborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadSaborActionPerformed
-         try {
+        try {
 
-        FrmSabor frm = new FrmSabor(this.pnlPrincipal);
+            FrmSabor frm = new FrmSabor(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
             frm.setPosicao();
@@ -227,7 +250,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void menuVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVendaActionPerformed
         try {
-        FrmVenda frm = new FrmVenda(this.pnlPrincipal);
+            FrmVenda frm = new FrmVenda(this.pnlPrincipal);
             this.pnlPrincipal.add(frm);
             frm.setVisible(true);
             frm.setPosicao();
@@ -235,6 +258,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_menuVendaActionPerformed
+
+    private void menuRelatorioCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioCafeActionPerformed
+        try {
+            FrmRelatorioCafe frm = new FrmRelatorioCafe(this.pnlPrincipal);
+            this.pnlPrincipal.add(frm);
+            frm.setVisible(true);
+            frm.setPosicao();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_menuRelatorioCafeActionPerformed
+
+    private void menuRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioClienteActionPerformed
+        try {
+            FrmRelatorioCliente frm = new FrmRelatorioCliente(this.pnlPrincipal);
+            this.pnlPrincipal.add(frm);
+            frm.setVisible(true);
+            frm.setPosicao();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_menuRelatorioClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,7 +320,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem menuRelatorioCafe;
+    private javax.swing.JMenuItem menuRelatorioCliente;
     private javax.swing.JMenuItem menuVenda;
     private javax.swing.JMenuItem mnuCadAparencia;
     private javax.swing.JMenuItem mnuCadAroma;

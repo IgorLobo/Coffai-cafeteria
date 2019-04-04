@@ -90,10 +90,10 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         cb_Caracteristico = new javax.swing.JComboBox();
-        txf_preco = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         txf_ID = new javax.swing.JTextField();
         btn_Pesquisar = new javax.swing.JButton();
+        txf_preco = new javax.swing.JTextField();
         jPanel_Aparencia = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         cbAparencia_Cor = new javax.swing.JComboBox();
@@ -144,8 +144,6 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
         cb_Caracteristico.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pouco", "Muito" }));
 
-        txf_preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(""))));
-
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("ID:");
 
@@ -182,20 +180,16 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txf_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(jPanel_CafeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel_CafeLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_Caracteristico, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_CafeLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txf_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(jPanel_CafeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_CafeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txf_preco)
+                    .addComponent(cb_Caracteristico, 0, 76, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
-
-        jPanel_CafeLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cb_Caracteristico, txf_preco});
 
         jPanel_CafeLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel6});
 
@@ -449,7 +443,7 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
         jTabbedPane2.addTab("Sabor", jPanel_Sabor);
 
-        btn_cadastrar.setText("Cadastrar");
+        btn_cadastrar.setText("Salvar");
         btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cadastrarActionPerformed(evt);
@@ -480,7 +474,6 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
         try {
-            System.out.println("botao acadastrar");
             Cafe cafe = new Cafe();
             cafe.setPopularidade(cb_Caracteristico.getSelectedItem().toString());
             cafe.setNome(txf_nome.getText());
@@ -504,6 +497,8 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
                 cafe.setId(auxCafe.getId());
             }
             new NCafe().salvar(cafe);
+            JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!");
+            this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -563,7 +558,7 @@ public class FrmCadCafe extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField txf_ID;
     private javax.swing.JTextField txf_nome;
-    private javax.swing.JFormattedTextField txf_preco;
+    private javax.swing.JTextField txf_preco;
     // End of variables declaration//GEN-END:variables
 private void carregarComboBox() {
         try {

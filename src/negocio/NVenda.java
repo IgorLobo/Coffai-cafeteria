@@ -16,6 +16,9 @@ public class NVenda {
     }
 
     public void salvar(Venda parametro) throws Exception {
+        
+        
+        
         per.incluir(parametro);
     }
     
