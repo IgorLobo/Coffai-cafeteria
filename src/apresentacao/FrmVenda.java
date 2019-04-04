@@ -209,7 +209,7 @@ public class FrmVenda extends javax.swing.JInternalFrame {
             try {
                 Venda venda = new Venda();
                 venda.setListaCafe(listCafe);
-                venda.setCliente(cliente.getId());
+                //venda.setCliente(cliente.getId());
                 new NVenda().salvar(venda);
                 this.dispose();
             } catch (Exception e) {
