@@ -13,7 +13,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 import negocio.NCliente;
+import util.Mask;
 
 public class FrmCadCliente extends javax.swing.JInternalFrame {
 
@@ -25,11 +29,20 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
      */
     public FrmCadCliente() {
         initComponents();
+
     }
 
     public FrmCadCliente(JDesktopPane parametro) {
         this();
         pnlPrincipal = parametro;
+        txtNome.setDocument(new Mask(200, "[0-9]"));
+        txtEndereco.setDocument(new Mask(200, ""));
+        txtBairro.setDocument(new Mask(20, ""));
+        txtCidade.setDocument(new Mask(20, "[0-9]"));
+        txtNumero.setDocument(new Mask(20, "[aA-zZ]"));
+        txtQuadra.setDocument(new Mask(20, ""));
+        txtLote.setDocument(new Mask(20, "[aA-zZ]"));
+
     }
 
     public FrmCadCliente(JDesktopPane parametro, Cliente cliente) {
@@ -51,7 +64,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField(20);
         jLabel3 = new javax.swing.JLabel();
         txtEndereco = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
@@ -345,7 +358,6 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnExcluir;
@@ -370,7 +382,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtLote;
-    private javax.swing.JFormattedTextField txtNascimeto;
+    protected javax.swing.JFormattedTextField txtNascimeto;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtQuadra;
@@ -425,4 +437,5 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         }
         return null;
     }
+
 }
