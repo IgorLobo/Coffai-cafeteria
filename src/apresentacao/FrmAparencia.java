@@ -278,7 +278,7 @@ public class FrmAparencia extends javax.swing.JInternalFrame {
             Oleosidade oleosidade = new Oleosidade();
             oleosidade.setQuantidade(capturarPorcentagem("Oleosidade"));
             new NOleosidade().salvar(oleosidade);
-            cbAparencia_Cor.removeAllItems();
+            cbAparencia_Oleosidade.removeAllItems();
             for (Oleosidade c : new NOleosidade().listar()) {
                 cbAparencia_Oleosidade.addItem(c);
             }
