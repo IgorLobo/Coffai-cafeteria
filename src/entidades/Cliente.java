@@ -151,7 +151,7 @@ public class Cliente {
     }
 
     public String getTelefone() {
-        return telefone.replaceAll("[(-]", email);
+        return telefone.replaceAll("[()-]", "");
     }
 
     public void setTelefone(String telefone) {
