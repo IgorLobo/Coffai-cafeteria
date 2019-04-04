@@ -31,6 +31,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
      */
     public FrmCadCliente() {
         initComponents();
+        btnConsultar.setContentAreaFilled(false);
 
     }
 
@@ -126,7 +127,10 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        btnConsultar.setText("Consultar");
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/lupa.png"))); // NOI18N
+        btnConsultar.setMaximumSize(new java.awt.Dimension(20, 20));
+        btnConsultar.setMinimumSize(new java.awt.Dimension(20, 20));
+        btnConsultar.setPreferredSize(new java.awt.Dimension(20, 20));
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarActionPerformed(evt);
@@ -193,7 +197,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnConsultar))
+                                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -249,7 +253,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsultar))
+                    .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -326,10 +330,10 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         try {
-
             FrmLisCliente janela = new FrmLisCliente(pnlPrincipal);
             pnlPrincipal.add(janela);
             janela.setVisible(true);
+            janela.setPosicao();
             this.dispose();
 
         } catch (Exception e) {

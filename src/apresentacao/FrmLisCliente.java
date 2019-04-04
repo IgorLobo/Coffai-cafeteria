@@ -6,6 +6,7 @@
 package apresentacao;
 
 import entidades.Cliente;
+import java.awt.Dimension;
 import java.util.Vector;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -89,12 +90,12 @@ public class FrmLisCliente extends javax.swing.JInternalFrame {
             int indice = tblClientes.getSelectedRow();
             String id = tblClientes.getValueAt(indice, 0).toString();
             
-            Cliente cliente = new NCliente().consultar(
-                    Integer.parseInt(id));
+            Cliente cliente = new NCliente().consultar(Integer.parseInt(id));
             
             FrmCadCliente janela = new FrmCadCliente(
                     pnlPrincipal, cliente);
             pnlPrincipal.add(janela);
+            janela.setPosicao();
             janela.setVisible(true);
             this.dispose();
             
@@ -135,6 +136,10 @@ public class FrmLisCliente extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-
+    }
+    
+    public void setPosicao() {
+        Dimension d = this.getDesktopPane().getSize();
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 }

@@ -51,7 +51,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="bIncluir_Fermentado" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="bIncluir_Fermentado1" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="bExcluir_Fermentado" min="-2" pref="20" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jbIncluir_Adstringente" min="-2" pref="20" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
                               <Component id="cbSabor_Amargo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="bIncluir_Fermentado" min="-2" max="-2" attributes="0"/>
-                          <Component id="bIncluir_Fermentado1" min="-2" max="-2" attributes="0"/>
+                          <Component id="bExcluir_Fermentado" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -512,7 +512,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bIncluir_FermentadoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bIncluir_Fermentado1">
+    <Component class="javax.swing.JButton" name="bExcluir_Fermentado">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/recursos/imagens/menos.png"/>
@@ -528,7 +528,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bIncluir_Fermentado1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bExcluir_FermentadoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
