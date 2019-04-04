@@ -63,7 +63,7 @@ public class Cliente {
     }
 
     public String getCpf() {
-        return cpf;
+        return cpf.replaceAll("[.-]", "");
     }
 
     public void setCpf(String cpf) {
@@ -127,7 +127,7 @@ public class Cliente {
     }
 
     public String getCep() {
-        return cep;
+        return cep.replaceAll("[-]", "");
     }
 
     public void setCep(String cep) {
@@ -151,7 +151,7 @@ public class Cliente {
     }
 
     public String getTelefone() {
-        return telefone;
+        return telefone.replaceAll("[(-]", email);
     }
 
     public void setTelefone(String telefone) {
