@@ -352,7 +352,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
 
     private void jbExcluir_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_DoceActionPerformed
         try {
-           GostoDoce selecionado = (GostoDoce) cbAroma_Doce.getSelectedItem();
+            GostoDoce selecionado = (GostoDoce) cbAroma_Doce.getSelectedItem();
             new NGostoDoce().excluir(selecionado.getId());
             cbAroma_Doce.removeItemAt(cbAroma_Doce.getSelectedIndex());
         } catch (Exception e) {
@@ -401,7 +401,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbExcluir_QueimadoActionPerformed
 
     private void jbIncluir_Grao_verdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_Grao_verdeActionPerformed
-         try {
+        try {
             GraoVerde graoVerde = new GraoVerde();
             graoVerde.setAmostra(capturarAmostra("Grão Verde"));
             graoVerde.setQuantidade(capturarPorcentagem("Grão Verde"));
@@ -419,6 +419,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             GostoDoce gostoDoce = new GostoDoce();
             gostoDoce.setIntensidade(capturarIntensidade("Gosto Doce"));
+            gostoDoce.setQuantidade(capturarPorcentagem("Gosto doce"));
             new NGostoDoce().salvar(gostoDoce);
             cbAroma_Doce.removeAllItems();
             for (GostoDoce c : new NGostoDoce().listar()) {
@@ -459,9 +460,10 @@ public class FrmAroma extends javax.swing.JInternalFrame {
 
     private void jbIncluir_FermentadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_FermentadoActionPerformed
         try {
-            Fermentado fermantado = new Fermentado();
-            fermantado.setIntensidade(capturarIntensidade("Fermentado"));
-            new NFermentado().salvar(fermantado);
+            Fermentado fermentado = new Fermentado();
+            fermentado.setIntensidade(capturarIntensidade("Fermentado"));
+            fermentado.setQuantidade(capturarPorcentagem("Fermentado"));
+            new NFermentado().salvar(fermentado);
             cbAroma_Fermentado.removeAllItems();
             for (Fermentado c : new NFermentado().listar()) {
                 cbAroma_Fermentado.addItem(c);
@@ -475,6 +477,7 @@ public class FrmAroma extends javax.swing.JInternalFrame {
         try {
             Queimado queimado = new Queimado();
             queimado.setIntensidade(capturarIntensidade("Queimado"));
+            queimado.setQuantidade(capturarPorcentagem("Queimado"));
             new NQueimado().Salvar(queimado);
             cbAroma_Queimado.removeAllItems();
             for (Queimado c : new NQueimado().listar()) {
@@ -524,14 +527,8 @@ public class FrmAroma extends javax.swing.JInternalFrame {
     }
 
     private double capturarPorcentagem(String nomeDoComponente) {
-        double porcentagem = -1;
-        do {
-            try {
-                porcentagem = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a porcentagem", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE));
-            } catch (Exception e) {
-                continue;
-            }
-        } while (porcentagem < 1 || porcentagem > 100);
+        double porcentagem;
+        porcentagem = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a porcentagem", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE));
         return porcentagem;
     }
 
