@@ -488,6 +488,7 @@ public class FrmSabor extends javax.swing.JInternalFrame {
             Fermentado fermentado = new Fermentado();
             fermentado.setQuantidade(capturarPorcentagem("Fermentado"));
             fermentado.setIntensidade(capturarIntensidade("Fermentado"));
+            new NFermentado().salvar(fermentado);
             for (Fermentado obj : new NFermentado().listar()) {
                 cbSabor_Fermentado.addItem(obj);
             }
