@@ -7,17 +7,14 @@ package apresentacao;
 
 import entidades.Cliente;
 import java.awt.Dimension;
-import java.sql.Date;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import negocio.NCliente;
 
-/**
- *
- * @author aluno
- */
 public class FrmCadCliente extends javax.swing.JInternalFrame {
 
     JDesktopPane pnlPrincipal;
@@ -70,7 +67,6 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         txtLote = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtCep = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -79,6 +75,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         txtNascimeto = new javax.swing.JFormattedTextField();
         jLabel12 = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JFormattedTextField();
+        txtCep = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setTitle("Cadastro de Cliente");
@@ -143,12 +140,22 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
 
-        txtNascimeto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            txtNascimeto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel12.setText("Telefone");
 
         try {
             txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -175,8 +182,8 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addGap(2, 2, 2)
                                 .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,16 +256,16 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnExcluir)
@@ -279,7 +286,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
             }
 
             cli.setNome(txtNome.getText());
-            cli.setDataNascimento(Converter(txtNascimeto.getText()));
+            cli.setDataNascimento((java.sql.Date) formatarData(txtNascimeto.getText()));
             cli.setCpf(txtCpf.getText());
             cli.setLogradouro(txtEndereco.getText());
             cli.setNumero(txtNumero.getText());
@@ -357,7 +364,7 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtCep;
+    private javax.swing.JFormattedTextField txtCep;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtEndereco;
@@ -411,11 +418,11 @@ public class FrmCadCliente extends javax.swing.JInternalFrame {
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 
-    private Date Converter(String data) throws ParseException{
-        data=txtNascimeto.getText();
-     SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-    Date date = (Date)format.parse(data);
-
-    return date;
+    public static Date formatarData(String parametro) throws ParseException {
+        DateFormat formatar = new SimpleDateFormat("dd/MM/yyyy");
+        if (!parametro.isEmpty()) {
+            return new java.sql.Date(formatar.parse(parametro).getTime());
+        }
+        return null;
     }
 }
