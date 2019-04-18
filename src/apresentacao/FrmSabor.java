@@ -25,7 +25,7 @@ import negocio.NQueimado;
  *
  * @author karioka
  */
-public class FrmSabor extends javax.swing.JInternalFrame {
+public class FrmSabor extends InternalFrameComponentesDoCafe {
 
     JDesktopPane pnlPrincipal;
 
@@ -375,11 +375,15 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbIncluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AdstringenteActionPerformed
         try {
-            Adstringente adstringente = new Adstringente();
-            adstringente.setQuantidade(capturarPorcentagem("Adstringente"));
-            new NAdstringente().salvar(adstringente);
-            for (Adstringente obj : new NAdstringente().listar()) {
-                cbSabor_Adstringente.addItem(obj);
+            new JDialogCapturarPorcentagem(this);
+            if (porcentagem > 0) {
+
+                Adstringente adstringente = new Adstringente();
+                adstringente.setQuantidade(porcentagem);
+                new NAdstringente().salvar(adstringente);
+                for (Adstringente obj : new NAdstringente().listar()) {
+                    cbSabor_Adstringente.addItem(obj);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -428,12 +432,15 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbIncluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_QueimadoActionPerformed
         try {
-            Queimado queimado = new Queimado();
-            queimado.setQuantidade(capturarPorcentagem("Queimado"));
-            queimado.setIntensidade(capturarIntensidade("Queimado"));
-            new NQueimado().Salvar(queimado);
-            for (Queimado obj : new NQueimado().listar()) {
-                cbSabor_Queimado.addItem(obj);
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                Queimado queimado = new Queimado();
+                queimado.setQuantidade(porcentagem);
+                queimado.setIntensidade(texto);
+                new NQueimado().Salvar(queimado);
+                for (Queimado obj : new NQueimado().listar()) {
+                    cbSabor_Queimado.addItem(obj);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -442,13 +449,18 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbIncluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AmargoActionPerformed
         try {
-            GostoAmargo gostoAmargo = new GostoAmargo();
-            gostoAmargo.setQuantidade(capturarPorcentagem("Gosto Amargo"));
-            gostoAmargo.setIntensidade(capturarIntensidade("Gosto amargo"));
-            new NGostoAmargo().salvar(gostoAmargo);
-            for (GostoAmargo obj : new NGostoAmargo().listar()) {
-                cbSabor_Amargo.addItem(obj);
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+
+                GostoAmargo gostoAmargo = new GostoAmargo();
+                gostoAmargo.setQuantidade(porcentagem);
+                gostoAmargo.setIntensidade(texto);
+                new NGostoAmargo().salvar(gostoAmargo);
+                for (GostoAmargo obj : new NGostoAmargo().listar()) {
+                    cbSabor_Amargo.addItem(obj);
+                }
             }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -456,12 +468,15 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbIncluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_Gosto_DoceActionPerformed
         try {
-            GostoDoce gostoDoce = new GostoDoce();
-            gostoDoce.setQuantidade(capturarPorcentagem("Gosto Doce"));
-            gostoDoce.setIntensidade(capturarIntensidade("Gosto doce"));
-            new NGostoDoce().salvar(gostoDoce);
-            for (GostoDoce obj : new NGostoDoce().listar()) {
-                cbSabor_Doce.addItem(obj);
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                GostoDoce gostoDoce = new GostoDoce();
+                gostoDoce.setQuantidade(porcentagem);
+                gostoDoce.setIntensidade(texto);
+                new NGostoDoce().salvar(gostoDoce);
+                for (GostoDoce obj : new NGostoDoce().listar()) {
+                    cbSabor_Doce.addItem(obj);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -470,12 +485,15 @@ public class FrmSabor extends javax.swing.JInternalFrame {
 
     private void jbIncluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AcidoActionPerformed
         try {
-            GostoAcido gostoAcido = new GostoAcido();
-            gostoAcido.setQuantidade(capturarPorcentagem("Gosto acido"));
-            gostoAcido.setIntensidade(capturarIntensidade("Gosto acido"));
-            new NGostoAcido().salvar(gostoAcido);
-            for (GostoAcido obj : new NGostoAcido().listar()) {
-                cbSabor_Acido.addItem(obj);
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                GostoAcido gostoAcido = new GostoAcido();
+                gostoAcido.setQuantidade(porcentagem);
+                gostoAcido.setIntensidade(texto);
+                new NGostoAcido().salvar(gostoAcido);
+                for (GostoAcido obj : new NGostoAcido().listar()) {
+                    cbSabor_Acido.addItem(obj);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -483,14 +501,17 @@ public class FrmSabor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbIncluir_AcidoActionPerformed
 
     private void bIncluir_FermentadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_FermentadoActionPerformed
-
         try {
-            Fermentado fermentado = new Fermentado();
-            fermentado.setQuantidade(capturarPorcentagem("Fermentado"));
-            fermentado.setIntensidade(capturarIntensidade("Fermentado"));
-            new NFermentado().salvar(fermentado);
-            for (Fermentado obj : new NFermentado().listar()) {
-                cbSabor_Fermentado.addItem(obj);
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+
+                Fermentado fermentado = new Fermentado();
+                fermentado.setQuantidade(porcentagem);
+                fermentado.setIntensidade(texto);
+                new NFermentado().salvar(fermentado);
+                for (Fermentado obj : new NFermentado().listar()) {
+                    cbSabor_Fermentado.addItem(obj);
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -538,19 +559,6 @@ public class FrmSabor extends javax.swing.JInternalFrame {
     public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
-    }
-
-    private double capturarPorcentagem(String nomeDoComponente) {
-        Double porcentagem = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a porcentagem", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE));
-        return porcentagem;
-    }
-
-    private String capturarAmostra(String nomeDoComponente) {
-        return JOptionPane.showInputDialog(null, "Digite a amostra", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    private String capturarIntensidade(String nomeDoComponente) {
-        return JOptionPane.showInputDialog(null, "Digite a intensidade", "Cadastrar " + nomeDoComponente, JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void carregarComboBox() {
