@@ -63,19 +63,19 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         cbSabor_Acido = new javax.swing.JComboBox();
-        jbIncluir_Adstringente = new javax.swing.JToggleButton();
-        jbExcluir_Adstringente = new javax.swing.JToggleButton();
-        jbIncluir_Queimado = new javax.swing.JToggleButton();
-        jbExcluir_Queimado = new javax.swing.JToggleButton();
-        jbIncluir_Amargo = new javax.swing.JToggleButton();
-        jbExcluir_Amargo = new javax.swing.JToggleButton();
-        jbIncluir_Gosto_Doce = new javax.swing.JToggleButton();
-        jbExcluir_Gosto_Doce = new javax.swing.JToggleButton();
-        jbIncluir_Acido = new javax.swing.JToggleButton();
-        jbExcluir_Acido = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         bIncluir_Fermentado = new javax.swing.JButton();
         bExcluir_Fermentado = new javax.swing.JButton();
+        bIncluir_Adstringente = new javax.swing.JButton();
+        bExcluir_Adstringente = new javax.swing.JButton();
+        bExcluir_Queimado = new javax.swing.JButton();
+        bIncluir_Queimado = new javax.swing.JButton();
+        bExcluir_Amargo = new javax.swing.JButton();
+        bIncluir_Amargo = new javax.swing.JButton();
+        bExcluir_Gosto_Doce = new javax.swing.JButton();
+        bIncluir_Gosto_Doce = new javax.swing.JButton();
+        bExcluir_Acido = new javax.swing.JButton();
+        bIncluir_Acido = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de Sabor");
@@ -122,106 +122,6 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
         cbSabor_Acido.setMinimumSize(new java.awt.Dimension(80, 20));
         cbSabor_Acido.setPreferredSize(new java.awt.Dimension(80, 20));
 
-        jbIncluir_Adstringente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Adstringente.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Adstringente.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Adstringente.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Adstringente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_AdstringenteActionPerformed(evt);
-            }
-        });
-
-        jbExcluir_Adstringente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Adstringente.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Adstringente.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Adstringente.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Adstringente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_AdstringenteActionPerformed(evt);
-            }
-        });
-
-        jbIncluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Queimado.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_QueimadoActionPerformed(evt);
-            }
-        });
-
-        jbExcluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Queimado.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_QueimadoActionPerformed(evt);
-            }
-        });
-
-        jbIncluir_Amargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Amargo.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Amargo.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Amargo.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Amargo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_AmargoActionPerformed(evt);
-            }
-        });
-
-        jbExcluir_Amargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Amargo.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Amargo.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Amargo.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Amargo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_AmargoActionPerformed(evt);
-            }
-        });
-
-        jbIncluir_Gosto_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Gosto_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Gosto_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Gosto_Doce.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Gosto_Doce.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_Gosto_DoceActionPerformed(evt);
-            }
-        });
-
-        jbExcluir_Gosto_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Gosto_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Gosto_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Gosto_Doce.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Gosto_Doce.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_Gosto_DoceActionPerformed(evt);
-            }
-        });
-
-        jbIncluir_Acido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Acido.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Acido.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Acido.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Acido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_AcidoActionPerformed(evt);
-            }
-        });
-
-        jbExcluir_Acido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Acido.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Acido.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Acido.setPreferredSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Acido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_AcidoActionPerformed(evt);
-            }
-        });
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/Sabor.png"))); // NOI18N
 
         bIncluir_Fermentado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
@@ -244,6 +144,106 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
             }
         });
 
+        bIncluir_Adstringente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        bIncluir_Adstringente.setMaximumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Adstringente.setMinimumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Adstringente.setPreferredSize(new java.awt.Dimension(20, 20));
+        bIncluir_Adstringente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bIncluir_AdstringenteActionPerformed(evt);
+            }
+        });
+
+        bExcluir_Adstringente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        bExcluir_Adstringente.setMaximumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Adstringente.setMinimumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Adstringente.setPreferredSize(new java.awt.Dimension(20, 20));
+        bExcluir_Adstringente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluir_AdstringenteActionPerformed(evt);
+            }
+        });
+
+        bExcluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        bExcluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Queimado.setPreferredSize(new java.awt.Dimension(20, 20));
+        bExcluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluir_QueimadoActionPerformed(evt);
+            }
+        });
+
+        bIncluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        bIncluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Queimado.setPreferredSize(new java.awt.Dimension(20, 20));
+        bIncluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bIncluir_QueimadoActionPerformed(evt);
+            }
+        });
+
+        bExcluir_Amargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        bExcluir_Amargo.setMaximumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Amargo.setMinimumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Amargo.setPreferredSize(new java.awt.Dimension(20, 20));
+        bExcluir_Amargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluir_AmargoActionPerformed(evt);
+            }
+        });
+
+        bIncluir_Amargo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        bIncluir_Amargo.setMaximumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Amargo.setMinimumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Amargo.setPreferredSize(new java.awt.Dimension(20, 20));
+        bIncluir_Amargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bIncluir_AmargoActionPerformed(evt);
+            }
+        });
+
+        bExcluir_Gosto_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        bExcluir_Gosto_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Gosto_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Gosto_Doce.setPreferredSize(new java.awt.Dimension(20, 20));
+        bExcluir_Gosto_Doce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluir_Gosto_DoceActionPerformed(evt);
+            }
+        });
+
+        bIncluir_Gosto_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        bIncluir_Gosto_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Gosto_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Gosto_Doce.setPreferredSize(new java.awt.Dimension(20, 20));
+        bIncluir_Gosto_Doce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bIncluir_Gosto_DoceActionPerformed(evt);
+            }
+        });
+
+        bExcluir_Acido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        bExcluir_Acido.setMaximumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Acido.setMinimumSize(new java.awt.Dimension(20, 20));
+        bExcluir_Acido.setPreferredSize(new java.awt.Dimension(20, 20));
+        bExcluir_Acido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluir_AcidoActionPerformed(evt);
+            }
+        });
+
+        bIncluir_Acido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        bIncluir_Acido.setMaximumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Acido.setMinimumSize(new java.awt.Dimension(20, 20));
+        bIncluir_Acido.setPreferredSize(new java.awt.Dimension(20, 20));
+        bIncluir_Acido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bIncluir_AcidoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,8 +252,8 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel15)
@@ -266,17 +266,13 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bExcluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(bIncluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(bIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(bExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(bIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(26, 26, 26)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -287,25 +283,29 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(cbSabor_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(cbSabor_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(cbSabor_Acido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbIncluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jbExcluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(cbSabor_Acido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bExcluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bIncluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bExcluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bIncluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bExcluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bIncluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(jLabel1)))
@@ -321,184 +321,46 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel14)
-                                .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel17)
-                                .addComponent(cbSabor_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(bIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbExcluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel15)
-                                .addComponent(cbSabor_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel18)
-                                .addComponent(cbSabor_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jbIncluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jbIncluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jbExcluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel14)
+                        .addComponent(cbSabor_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17)
+                        .addComponent(cbSabor_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bExcluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bIncluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(cbSabor_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel18)
+                        .addComponent(cbSabor_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jbExcluir_Amargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbIncluir_Amargo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bExcluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bIncluir_Adstringente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(bExcluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bIncluir_Gosto_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbIncluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbExcluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel16)
                         .addComponent(cbSabor_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel19)
-                        .addComponent(cbSabor_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(cbSabor_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bExcluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bIncluir_Acido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel14, jLabel15, jLabel16});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jbExcluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AdstringenteActionPerformed
-        try {
-            Adstringente selecionado = (Adstringente) cbSabor_Adstringente.getSelectedItem();
-            new NAdstringente().excluir(selecionado.getId());
-            cbSabor_Adstringente.removeItemAt(cbSabor_Adstringente.getSelectedIndex());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbExcluir_AdstringenteActionPerformed
-
-    private void jbIncluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AdstringenteActionPerformed
-        try {
-            new JDialogCapturarPorcentagem(this);
-            if (porcentagem > 0) {
-
-                Adstringente adstringente = new Adstringente();
-                adstringente.setQuantidade(porcentagem);
-                new NAdstringente().salvar(adstringente);
-                for (Adstringente obj : new NAdstringente().listar()) {
-                    cbSabor_Adstringente.addItem(obj);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbIncluir_AdstringenteActionPerformed
-
-    private void jbExcluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_QueimadoActionPerformed
-        try {
-            Queimado selecionado = (Queimado) cbSabor_Queimado.getSelectedItem();
-            new NQueimado().excluir(selecionado.getId());
-            cbSabor_Queimado.removeItemAt(cbSabor_Queimado.getSelectedIndex());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbExcluir_QueimadoActionPerformed
-
-    private void jbExcluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AmargoActionPerformed
-        try {
-            GostoAmargo selecionado = (GostoAmargo) cbSabor_Amargo.getSelectedItem();
-            new NGostoAmargo().excluir(selecionado.getId());
-            cbSabor_Amargo.removeItemAt(cbSabor_Amargo.getSelectedIndex());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbExcluir_AmargoActionPerformed
-
-    private void jbExcluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_Gosto_DoceActionPerformed
-        try {
-            GostoDoce selecionado = (GostoDoce) cbSabor_Doce.getSelectedItem();
-            new NGostoDoce().excluir(selecionado.getId());
-            cbSabor_Doce.removeItemAt(cbSabor_Doce.getSelectedIndex());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbExcluir_Gosto_DoceActionPerformed
-
-    private void jbExcluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_AcidoActionPerformed
-        try {
-            GostoAcido selecionado = (GostoAcido) cbSabor_Acido.getSelectedItem();
-            new NGostoAcido().excluir(selecionado.getId());
-            cbSabor_Acido.removeItemAt(cbSabor_Acido.getSelectedIndex());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbExcluir_AcidoActionPerformed
-
-    private void jbIncluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_QueimadoActionPerformed
-        try {
-            new JDialogCapturarIntensidadeEPorcentagem(this);
-            if (porcentagem > 0 && texto != null) {
-                Queimado queimado = new Queimado();
-                queimado.setQuantidade(porcentagem);
-                queimado.setIntensidade(texto);
-                new NQueimado().Salvar(queimado);
-                for (Queimado obj : new NQueimado().listar()) {
-                    cbSabor_Queimado.addItem(obj);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbIncluir_QueimadoActionPerformed
-
-    private void jbIncluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AmargoActionPerformed
-        try {
-            new JDialogCapturarIntensidadeEPorcentagem(this);
-            if (porcentagem > 0 && texto != null) {
-
-                GostoAmargo gostoAmargo = new GostoAmargo();
-                gostoAmargo.setQuantidade(porcentagem);
-                gostoAmargo.setIntensidade(texto);
-                new NGostoAmargo().salvar(gostoAmargo);
-                for (GostoAmargo obj : new NGostoAmargo().listar()) {
-                    cbSabor_Amargo.addItem(obj);
-                }
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbIncluir_AmargoActionPerformed
-
-    private void jbIncluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_Gosto_DoceActionPerformed
-        try {
-            new JDialogCapturarIntensidadeEPorcentagem(this);
-            if (porcentagem > 0 && texto != null) {
-                GostoDoce gostoDoce = new GostoDoce();
-                gostoDoce.setQuantidade(porcentagem);
-                gostoDoce.setIntensidade(texto);
-                new NGostoDoce().salvar(gostoDoce);
-                for (GostoDoce obj : new NGostoDoce().listar()) {
-                    cbSabor_Doce.addItem(obj);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbIncluir_Gosto_DoceActionPerformed
-
-    private void jbIncluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_AcidoActionPerformed
-        try {
-            new JDialogCapturarIntensidadeEPorcentagem(this);
-            if (porcentagem > 0 && texto != null) {
-                GostoAcido gostoAcido = new GostoAcido();
-                gostoAcido.setQuantidade(porcentagem);
-                gostoAcido.setIntensidade(texto);
-                new NGostoAcido().salvar(gostoAcido);
-                for (GostoAcido obj : new NGostoAcido().listar()) {
-                    cbSabor_Acido.addItem(obj);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_jbIncluir_AcidoActionPerformed
 
     private void bIncluir_FermentadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_FermentadoActionPerformed
         try {
@@ -528,9 +390,156 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
         }
     }//GEN-LAST:event_bExcluir_FermentadoActionPerformed
 
+    private void bExcluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluir_AdstringenteActionPerformed
+        try {
+            Adstringente selecionado = (Adstringente) cbSabor_Adstringente.getSelectedItem();
+            new NAdstringente().excluir(selecionado.getId());
+            cbSabor_Adstringente.removeItemAt(cbSabor_Adstringente.getSelectedIndex());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bExcluir_AdstringenteActionPerformed
+
+    private void bExcluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluir_QueimadoActionPerformed
+        try {
+            Queimado selecionado = (Queimado) cbSabor_Queimado.getSelectedItem();
+            new NQueimado().excluir(selecionado.getId());
+            cbSabor_Queimado.removeItemAt(cbSabor_Queimado.getSelectedIndex());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bExcluir_QueimadoActionPerformed
+
+    private void bExcluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluir_AmargoActionPerformed
+        try {
+            GostoAmargo selecionado = (GostoAmargo) cbSabor_Amargo.getSelectedItem();
+            new NGostoAmargo().excluir(selecionado.getId());
+            cbSabor_Amargo.removeItemAt(cbSabor_Amargo.getSelectedIndex());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bExcluir_AmargoActionPerformed
+
+    private void bExcluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluir_Gosto_DoceActionPerformed
+        try {
+            GostoDoce selecionado = (GostoDoce) cbSabor_Doce.getSelectedItem();
+            new NGostoDoce().excluir(selecionado.getId());
+            cbSabor_Doce.removeItemAt(cbSabor_Doce.getSelectedIndex());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bExcluir_Gosto_DoceActionPerformed
+
+    private void bExcluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluir_AcidoActionPerformed
+        try {
+            GostoAcido selecionado = (GostoAcido) cbSabor_Acido.getSelectedItem();
+            new NGostoAcido().excluir(selecionado.getId());
+            cbSabor_Acido.removeItemAt(cbSabor_Acido.getSelectedIndex());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bExcluir_AcidoActionPerformed
+
+    private void bIncluir_AdstringenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_AdstringenteActionPerformed
+        try {
+            new JDialogCapturarPorcentagem(this);
+            if (porcentagem > 0) {
+
+                Adstringente adstringente = new Adstringente();
+                adstringente.setQuantidade(porcentagem);
+                new NAdstringente().salvar(adstringente);
+                for (Adstringente obj : new NAdstringente().listar()) {
+                    cbSabor_Adstringente.addItem(obj);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bIncluir_AdstringenteActionPerformed
+
+    private void bIncluir_QueimadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_QueimadoActionPerformed
+        try {
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                Queimado queimado = new Queimado();
+                queimado.setQuantidade(porcentagem);
+                queimado.setIntensidade(texto);
+                new NQueimado().Salvar(queimado);
+                for (Queimado obj : new NQueimado().listar()) {
+                    cbSabor_Queimado.addItem(obj);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bIncluir_QueimadoActionPerformed
+
+    private void bIncluir_AmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_AmargoActionPerformed
+        try {
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+
+                GostoAmargo gostoAmargo = new GostoAmargo();
+                gostoAmargo.setQuantidade(porcentagem);
+                gostoAmargo.setIntensidade(texto);
+                new NGostoAmargo().salvar(gostoAmargo);
+                for (GostoAmargo obj : new NGostoAmargo().listar()) {
+                    cbSabor_Amargo.addItem(obj);
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bIncluir_AmargoActionPerformed
+
+    private void bIncluir_Gosto_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_Gosto_DoceActionPerformed
+        try {
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                GostoDoce gostoDoce = new GostoDoce();
+                gostoDoce.setQuantidade(porcentagem);
+                gostoDoce.setIntensidade(texto);
+                new NGostoDoce().salvar(gostoDoce);
+                for (GostoDoce obj : new NGostoDoce().listar()) {
+                    cbSabor_Doce.addItem(obj);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bIncluir_Gosto_DoceActionPerformed
+
+    private void bIncluir_AcidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bIncluir_AcidoActionPerformed
+       try {
+            new JDialogCapturarIntensidadeEPorcentagem(this);
+            if (porcentagem > 0 && texto != null) {
+                GostoAcido gostoAcido = new GostoAcido();
+                gostoAcido.setQuantidade(porcentagem);
+                gostoAcido.setIntensidade(texto);
+                new NGostoAcido().salvar(gostoAcido);
+                for (GostoAcido obj : new NGostoAcido().listar()) {
+                    cbSabor_Acido.addItem(obj);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_bIncluir_AcidoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bExcluir_Acido;
+    private javax.swing.JButton bExcluir_Adstringente;
+    private javax.swing.JButton bExcluir_Amargo;
     private javax.swing.JButton bExcluir_Fermentado;
+    private javax.swing.JButton bExcluir_Gosto_Doce;
+    private javax.swing.JButton bExcluir_Queimado;
+    private javax.swing.JButton bIncluir_Acido;
+    private javax.swing.JButton bIncluir_Adstringente;
+    private javax.swing.JButton bIncluir_Amargo;
     private javax.swing.JButton bIncluir_Fermentado;
+    private javax.swing.JButton bIncluir_Gosto_Doce;
+    private javax.swing.JButton bIncluir_Queimado;
     private javax.swing.JComboBox cbSabor_Acido;
     private javax.swing.JComboBox cbSabor_Adstringente;
     private javax.swing.JComboBox cbSabor_Amargo;
@@ -544,16 +553,6 @@ public class FrmSabor extends InternalFrameComponentesDoCafe {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JToggleButton jbExcluir_Acido;
-    private javax.swing.JToggleButton jbExcluir_Adstringente;
-    private javax.swing.JToggleButton jbExcluir_Amargo;
-    private javax.swing.JToggleButton jbExcluir_Gosto_Doce;
-    private javax.swing.JToggleButton jbExcluir_Queimado;
-    private javax.swing.JToggleButton jbIncluir_Acido;
-    private javax.swing.JToggleButton jbIncluir_Adstringente;
-    private javax.swing.JToggleButton jbIncluir_Amargo;
-    private javax.swing.JToggleButton jbIncluir_Gosto_Doce;
-    private javax.swing.JToggleButton jbIncluir_Queimado;
     // End of variables declaration//GEN-END:variables
 
     public void setPosicao() {

@@ -57,25 +57,25 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
         cbAroma_Caramelizado = new javax.swing.JComboBox();
         cbAroma_Doce = new javax.swing.JComboBox();
         cbAroma_GraoVerde = new javax.swing.JComboBox();
-        jbIncluir_Grao_verde = new javax.swing.JToggleButton();
-        jbExcluir_Grao_verde = new javax.swing.JToggleButton();
-        jbIncluir_Doce = new javax.swing.JToggleButton();
-        jbExcluir_Doce = new javax.swing.JToggleButton();
-        jbIncluir_Caramelizado = new javax.swing.JToggleButton();
-        jbExcluir_Caramelizado = new javax.swing.JToggleButton();
         jLabel12 = new javax.swing.JLabel();
         cbAroma_Queimado = new javax.swing.JComboBox();
         cbAroma_Fermentado = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         cbAroma_Amendoa = new javax.swing.JComboBox();
-        jbIncluir_Amendoa = new javax.swing.JToggleButton();
-        jbExcluir_Amendoa = new javax.swing.JToggleButton();
-        jbIncluir_Fermentado = new javax.swing.JToggleButton();
-        jbExcluir_Fermentado = new javax.swing.JToggleButton();
-        jbIncluir_Queimado = new javax.swing.JToggleButton();
-        jbExcluir_Queimado = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
+        jbExcluir_Grao_Verde = new javax.swing.JButton();
+        jbIncluir_Grao_Verde = new javax.swing.JButton();
+        jbExcluir_Doce = new javax.swing.JButton();
+        jbIncluir_Doce = new javax.swing.JButton();
+        jbExcluir_Caramelizado = new javax.swing.JButton();
+        jbIncluir_Caramelizado = new javax.swing.JButton();
+        jbExcluir_Amendoa = new javax.swing.JButton();
+        jbIncluir_Amendoa = new javax.swing.JButton();
+        jbExcluir_Fermentado = new javax.swing.JButton();
+        jbIncluir_Fermentado = new javax.swing.JButton();
+        jbExcluir_Queimado = new javax.swing.JButton();
+        jbIncluir_Queimado = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de Aroma");
@@ -90,30 +90,33 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Caramelizado:");
 
-        jbIncluir_Grao_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Grao_verde.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Grao_verde.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Grao_verde.addActionListener(new java.awt.event.ActionListener() {
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Queimado:");
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Fermentado:");
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel10.setText("Amêndoa:");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/Aroma.png"))); // NOI18N
+
+        jbExcluir_Grao_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
+        jbExcluir_Grao_Verde.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Grao_Verde.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbExcluir_Grao_Verde.setPreferredSize(new java.awt.Dimension(51, 27));
+        jbExcluir_Grao_Verde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_Grao_verdeActionPerformed(evt);
+                jbExcluir_Grao_VerdeActionPerformed(evt);
             }
         });
 
-        jbExcluir_Grao_verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/menos.png"))); // NOI18N
-        jbExcluir_Grao_verde.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Grao_verde.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbExcluir_Grao_verde.addActionListener(new java.awt.event.ActionListener() {
+        jbIncluir_Grao_Verde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Grao_Verde.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Grao_Verde.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Grao_Verde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluir_Grao_verdeActionPerformed(evt);
-            }
-        });
-
-        jbIncluir_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Doce.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_DoceActionPerformed(evt);
+                jbIncluir_Grao_VerdeActionPerformed(evt);
             }
         });
 
@@ -126,12 +129,12 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
             }
         });
 
-        jbIncluir_Caramelizado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Caramelizado.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Caramelizado.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Caramelizado.addActionListener(new java.awt.event.ActionListener() {
+        jbIncluir_Doce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Doce.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Doce.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Doce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_CaramelizadoActionPerformed(evt);
+                jbIncluir_DoceActionPerformed(evt);
             }
         });
 
@@ -144,21 +147,12 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
             }
         });
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setText("Queimado:");
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Fermentado:");
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setText("Amêndoa:");
-
-        jbIncluir_Amendoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Amendoa.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Amendoa.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Amendoa.addActionListener(new java.awt.event.ActionListener() {
+        jbIncluir_Caramelizado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Caramelizado.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Caramelizado.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Caramelizado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_AmendoaActionPerformed(evt);
+                jbIncluir_CaramelizadoActionPerformed(evt);
             }
         });
 
@@ -171,12 +165,12 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
             }
         });
 
-        jbIncluir_Fermentado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Fermentado.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Fermentado.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Fermentado.addActionListener(new java.awt.event.ActionListener() {
+        jbIncluir_Amendoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Amendoa.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Amendoa.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Amendoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_FermentadoActionPerformed(evt);
+                jbIncluir_AmendoaActionPerformed(evt);
             }
         });
 
@@ -189,12 +183,12 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
             }
         });
 
-        jbIncluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
-        jbIncluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
-        jbIncluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
+        jbIncluir_Fermentado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Fermentado.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Fermentado.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Fermentado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIncluir_QueimadoActionPerformed(evt);
+                jbIncluir_FermentadoActionPerformed(evt);
             }
         });
 
@@ -207,7 +201,14 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/Aroma.png"))); // NOI18N
+        jbIncluir_Queimado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/imagens/mais.png"))); // NOI18N
+        jbIncluir_Queimado.setMaximumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Queimado.setMinimumSize(new java.awt.Dimension(20, 20));
+        jbIncluir_Queimado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluir_QueimadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,17 +232,17 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbExcluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbExcluir_Grao_Verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbExcluir_Grao_verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Grao_verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbIncluir_Grao_Verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbExcluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jbIncluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbExcluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbIncluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
@@ -259,25 +260,23 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbIncluir_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jbExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jbIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(164, 164, 164))
+                .addGap(111, 111, 111))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel12, jLabel7, jLabel8, jLabel9});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cbAroma_Amendoa, cbAroma_Caramelizado, cbAroma_Doce, cbAroma_Fermentado, cbAroma_GraoVerde, cbAroma_Queimado});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbExcluir_Amendoa, jbExcluir_Caramelizado, jbExcluir_Doce, jbExcluir_Fermentado, jbExcluir_Grao_verde, jbExcluir_Queimado, jbIncluir_Amendoa, jbIncluir_Caramelizado, jbIncluir_Doce, jbIncluir_Fermentado, jbIncluir_Grao_verde, jbIncluir_Queimado});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,59 +287,61 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbExcluir_Grao_verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbIncluir_Grao_verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel7)
-                                .addComponent(cbAroma_GraoVerde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cbAroma_GraoVerde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbExcluir_Grao_Verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbIncluir_Grao_Verde, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbIncluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbExcluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel8)
-                                .addComponent(cbAroma_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cbAroma_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jbExcluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbIncluir_Doce, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbExcluir_Caramelizado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbIncluir_Caramelizado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel9)
-                                .addComponent(cbAroma_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbAroma_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jbExcluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbIncluir_Caramelizado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbIncluir_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbExcluir_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
-                                .addComponent(cbAroma_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cbAroma_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbExcluir_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbIncluir_Amendoa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel11)
                                 .addComponent(cbAroma_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jbExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jbExcluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbIncluir_Fermentado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel12)
                                 .addComponent(cbAroma_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jbExcluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbIncluir_Queimado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbAroma_Amendoa, cbAroma_Caramelizado, cbAroma_Doce, cbAroma_Fermentado, cbAroma_GraoVerde, cbAroma_Queimado});
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel12, jLabel7, jLabel8, jLabel9});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbExcluir_Amendoa, jbExcluir_Caramelizado, jbExcluir_Doce, jbExcluir_Fermentado, jbExcluir_Grao_verde, jbExcluir_Queimado, jbIncluir_Amendoa, jbIncluir_Caramelizado, jbIncluir_Doce, jbIncluir_Fermentado, jbIncluir_Grao_verde, jbIncluir_Queimado});
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbExcluir_Grao_verdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_Grao_verdeActionPerformed
+    private void jbExcluir_Grao_VerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_Grao_VerdeActionPerformed
         try {
             GraoVerde selecionado = (GraoVerde) cbAroma_GraoVerde.getSelectedItem();
             new NGraoVerde().excluir(selecionado.getId());
@@ -348,7 +349,7 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-    }//GEN-LAST:event_jbExcluir_Grao_verdeActionPerformed
+    }//GEN-LAST:event_jbExcluir_Grao_VerdeActionPerformed
 
     private void jbExcluir_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluir_DoceActionPerformed
         try {
@@ -400,7 +401,7 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
         }
     }//GEN-LAST:event_jbExcluir_QueimadoActionPerformed
 
-    private void jbIncluir_Grao_verdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_Grao_verdeActionPerformed
+    private void jbIncluir_Grao_VerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_Grao_VerdeActionPerformed
         try {
             new JDialogCapturarIntensidadeEPorcentagem(this);
             if (texto != null && porcentagem > 0) {
@@ -416,7 +417,7 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-    }//GEN-LAST:event_jbIncluir_Grao_verdeActionPerformed
+    }//GEN-LAST:event_jbIncluir_Grao_VerdeActionPerformed
 
     private void jbIncluir_DoceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluir_DoceActionPerformed
         try {
@@ -525,18 +526,18 @@ public class FrmAroma extends InternalFrameComponentesDoCafe {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jbExcluir_Amendoa;
-    private javax.swing.JToggleButton jbExcluir_Caramelizado;
-    private javax.swing.JToggleButton jbExcluir_Doce;
-    private javax.swing.JToggleButton jbExcluir_Fermentado;
-    private javax.swing.JToggleButton jbExcluir_Grao_verde;
-    private javax.swing.JToggleButton jbExcluir_Queimado;
-    private javax.swing.JToggleButton jbIncluir_Amendoa;
-    private javax.swing.JToggleButton jbIncluir_Caramelizado;
-    private javax.swing.JToggleButton jbIncluir_Doce;
-    private javax.swing.JToggleButton jbIncluir_Fermentado;
-    private javax.swing.JToggleButton jbIncluir_Grao_verde;
-    private javax.swing.JToggleButton jbIncluir_Queimado;
+    private javax.swing.JButton jbExcluir_Amendoa;
+    private javax.swing.JButton jbExcluir_Caramelizado;
+    private javax.swing.JButton jbExcluir_Doce;
+    private javax.swing.JButton jbExcluir_Fermentado;
+    private javax.swing.JButton jbExcluir_Grao_Verde;
+    private javax.swing.JButton jbExcluir_Queimado;
+    private javax.swing.JButton jbIncluir_Amendoa;
+    private javax.swing.JButton jbIncluir_Caramelizado;
+    private javax.swing.JButton jbIncluir_Doce;
+    private javax.swing.JButton jbIncluir_Fermentado;
+    private javax.swing.JButton jbIncluir_Grao_Verde;
+    private javax.swing.JButton jbIncluir_Queimado;
     // End of variables declaration//GEN-END:variables
 
     private void limpar() {

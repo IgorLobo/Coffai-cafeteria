@@ -74,7 +74,7 @@
                                   <Component id="cbAparencia_Turbidez" min="-2" pref="84" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jbExcluir_Turbidez" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Component id="jbIncluir_Turbidez" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -84,14 +84,14 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Component id="jbExcluir_Cor" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           <Component id="jbIncluir_Cor" min="-2" pref="20" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Component id="jbExcluir_Oleosidade" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           <Component id="jbIncluir_Oleosidade" min="-2" pref="20" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -100,7 +100,7 @@
                       </Group>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,31 +110,29 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbAparencia_Cor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbExcluir_Cor" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jbIncluir_Cor" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbAparencia_Cor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jbIncluir_Cor" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jbExcluir_Cor" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="cbAparencia_Oleosidade" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="2" groupAlignment="3" attributes="0">
-                          <Component id="jbExcluir_Oleosidade" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jbIncluir_Oleosidade" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jbIncluir_Oleosidade" alignment="2" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jbExcluir_Oleosidade" alignment="2" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jbExcluir_Turbidez" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jbIncluir_Turbidez" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbAparencia_Turbidez" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jbIncluir_Turbidez" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jbExcluir_Turbidez" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
@@ -181,23 +179,14 @@
             <Property name="text" type="java.lang.String" value="Turbidez:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbExcluir_Cor">
+        <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/imagens/menos.png"/>
-            </Property>
-            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[20, 20]"/>
-            </Property>
-            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[20, 20]"/>
+              <Image iconType="3" name="/recursos/imagens/Aparencia.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_CorActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbIncluir_Cor">
+        <Component class="javax.swing.JButton" name="jbIncluir_Cor">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/imagens/mais.png"/>
@@ -213,7 +202,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbIncluir_CorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbExcluir_Oleosidade">
+        <Component class="javax.swing.JButton" name="jbExcluir_Cor">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/imagens/menos.png"/>
@@ -226,10 +215,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_OleosidadeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_CorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbIncluir_Oleosidade">
+        <Component class="javax.swing.JButton" name="jbIncluir_Oleosidade">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/imagens/mais.png"/>
@@ -245,7 +234,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbIncluir_OleosidadeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbExcluir_Turbidez">
+        <Component class="javax.swing.JButton" name="jbExcluir_Oleosidade">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/imagens/menos.png"/>
@@ -258,10 +247,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_TurbidezActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_OleosidadeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jbIncluir_Turbidez">
+        <Component class="javax.swing.JButton" name="jbIncluir_Turbidez">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/imagens/mais.png"/>
@@ -277,12 +266,21 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbIncluir_TurbidezActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JButton" name="jbExcluir_Turbidez">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/imagens/Aparencia.png"/>
+              <Image iconType="3" name="/recursos/imagens/menos.png"/>
+            </Property>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[20, 20]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[20, 20]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluir_TurbidezActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
