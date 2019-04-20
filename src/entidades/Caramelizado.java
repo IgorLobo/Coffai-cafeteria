@@ -34,8 +34,8 @@ public class Caramelizado {
     public void setIntensidade(double intensidade) {
         this.intensidade = intensidade;
     }
-    
+
     public String toString() {
-        return String.format("%s %%", getIntensidade());
+        return String.format("%.2f%%", getIntensidade());
     }
 }
